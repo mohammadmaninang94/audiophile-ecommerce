@@ -129,6 +129,10 @@ html:focus-within {
   gap: var(--gap, 1rem);
 }
 
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;
@@ -177,7 +181,7 @@ html:focus-within {
   color: hsl(var(--clr-black) / 0.5);
 }
 .text-orange-dark {
-  color: hsl(var(--clr-orange-dark) );
+  color: hsl(var(--clr-orange-dark));
 }
 
 /* typography */
@@ -244,4 +248,29 @@ html:focus-within {
 }
 .fw-bold {
   font-weight: var(--fw-bold);
+}
+
+/* components */
+
+.number-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-700);
+  text-transform: uppercase;
+  margin-bottom: 4.5rem;
+}
+
+.number-title span {
+  margin-right: 2rem;
+  color: hsl(var(--clr-orange-dark));
+}
+
+.color-box {
+  padding: 3rem 1rem 1rem;
+  border: 1px solid hsl(0 0% 30% / 20.08%);
+  border-radius: 8px;
+  width: 255px;
+}
+
+.color-box + p span:last-child {
+  padding-left: 95px
 }
