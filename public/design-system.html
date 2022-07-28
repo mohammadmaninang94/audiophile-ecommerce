@@ -27,8 +27,14 @@
     />
     <link rel="stylesheet" href="design-system.css" />
   </head>
-  <body class="container">
+  <body class="container flow">
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1
+      class="uppercase fs-900 fw-bold"
+      style="text-align: center; margin-top: 4.5rem"
+    >
+      Design System
+    </h1>
     <section id="colors" style="margin: 4rem 0">
       <h2 class="number-title"><span>01</span> colors</h2>
       <div class="flex" style="flex-wrap: wrap; --gap: 2rem">
@@ -83,7 +89,11 @@
         </div>
       </div>
     </section>
-    <section id="typoghraphy" class="flow" style="margin: 4rem 0; --flow-space: 3rem;">
+    <section
+      id="typoghraphy"
+      class="flow"
+      style="margin: 4rem 0; --flow-space: 3rem"
+    >
       <h2 class="number-title"><span>01</span> typography</h2>
       <div
         class="flex"
@@ -230,6 +240,145 @@
           </div>
         </div>
       </div>
+    </section>
+    <section id="buttons" class="flex" style="margin: 4rem 0; --gap: 11rem">
+      <h2 class="number-title"><span>03</span> buttons</h2>
+      <div class="flow" style="--flow-space: 4rem">
+        <div class="buttons__row flex">
+          <div>
+            <button type="button" class="btn btn__primary">see product</button>
+            <p class="design-system__text">Button 1 Default</p>
+          </div>
+          <div>
+            <button type="button" class="btn btn__secondary">
+              see product
+            </button>
+            <p class="design-system__text">Button 2 Default</p>
+          </div>
+          <div>
+            <a href="#" class="link">shop</a>
+            <p class="design-system__text">Button 3 Default</p>
+          </div>
+        </div>
+        <div class="buttons__row flex">
+          <div>
+            <button type="button" class="btn btn__primary btn__primary--hover">
+              see product
+            </button>
+            <p class="design-system__text">Button 1 Hover</p>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn__secondary btn__secondary--hover"
+            >
+              see product
+            </button>
+            <p class="design-system__text">Button 2 Hover</p>
+          </div>
+          <div>
+            <a href="#" class="link link--hover">shop</a>
+            <p class="design-system__text">Button 3 Hover</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="form-elements"
+      class="grid"
+      style="margin: 4rem 0; --gap: 4rem"
+    >
+      <h2 class="number-title"><span>04</span> forms elements</h2>
+      <form class="flow" style="--flow-space: 6rem">
+        <div class="form-elements--row flex">
+          <div>
+            <div class="text-input">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Insert your name"
+                required
+              />
+              <label for="email" class="text-input__label">Name</label>
+            </div>
+            <p class="design-system__text">Text Field Default</p>
+          </div>
+          <div>
+            <label class="radio-btn">
+              <input type="radio" name="paymentType" value="emoney" />
+              <span></span>
+              e-money
+            </label>
+            <p class="design-system__text">Radio Selection Default</p>
+          </div>
+          <div>
+            <div class="quantity-btn">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <p class="design-system__text">Numbers Default</p>
+          </div>
+        </div>
+        <div class="form-elements--row flex">
+          <div>
+            <div class="text-input">
+              <input
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Insert your email"
+                value="Alexei"
+                required
+              />
+              <label for="email" class="text-input__label">Name</label>
+            </div>
+            <p class="design-system__text">Text Field Active</p>
+          </div>
+          <div>
+            <label class="radio-btn radio-btn--hover">
+              <input type="radio" name="paymentType" value="emoney" checked />
+              <span></span>
+              e-money
+            </label>
+            <p class="design-system__text">Radio Selection Active</p>
+          </div>
+          <div>
+            <div class="quantity-btn">
+              <button>-</button>
+              <span>1</span>
+              <button class="quantity-btn--hover">+</button>
+            </div>
+            <p class="design-system__text">Numbers Hover</p>
+          </div>
+        </div>
+        <div class="form-elements--row flex">
+          <div>
+            <div class="text-input text-input--error">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Insert your email"
+                value="!@#!@$!@"
+                required
+              />
+              <label for="email" class="text-input__label">Email</label>
+              <span class="text-input__error">Wrong format</span>
+            </div>
+            <p class="design-system__text">Text Field Error</p>
+          </div>
+          <div>
+            <label class="radio-btn radio-btn--hover">
+              <input type="radio" name="paymentType" value="emoney" />
+              <span></span>
+              e-money
+            </label>
+            <p class="design-system__text">Radio Selection Hover</p>
+          </div>
+        </div>
+      </form>
     </section>
   </body>
 </html>
