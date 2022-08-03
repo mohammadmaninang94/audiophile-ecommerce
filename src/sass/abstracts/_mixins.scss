@@ -1,0 +1,103 @@
+@use "./variables" as *;
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+  
+  /* colors */
+
+  @mixin bg-orange-dark {
+    background-color: hsl($clr-orange-dark);
+  }
+  @mixin bg-orange-dark-2 {
+    background-color: hsl($clr-orange-dark-2);
+  }
+  @mixin bg-orange-ligth {
+    background-color: hsl($clr-orange-ligth);
+  }
+  @mixin bg-gray-ligth {
+    background-color: hsl($clr-gray-ligth);
+  }
+  @mixin bg-black {
+    background-color: hsl($clr-black);
+  }
+  @mixin bg-white {
+    background-color: hsl($clr-white);
+  }
+  @mixin bg-gray-ligth {
+    background-color: hsl($clr-gray-ligth);
+  }
+  @mixin bg-gray-ligther {
+    background-color: hsl($clr-gray-ligther);
+  }
+  @mixin bg-gray-dark {
+    background-color: hsl($clr-gray-dark);
+  }
+  
+  @mixin text-gray {
+    color: hsl($clr-black);
+  }
+  @mixin text-orange-dark {
+    color: hsl($clr-orange-dark);
+  }
+  
+  /* typography */
+  
+  @mixin uppercase {
+    text-transform: uppercase;
+  }
+  
+  @mixin fs-1000 {
+    font-size: $fs-1000;
+    letter-spacing: 2px;
+  }
+  @mixin fs-900 {
+    font-size: $fs-900;
+    letter-spacing: 1.5px;
+  }
+  @mixin fs-800 {
+    font-size: $fs-800;
+    letter-spacing: 1.15px;
+  }
+  @mixin fs-700 {
+    font-size: $fs-700;
+    letter-spacing: 2px;
+  }
+  @mixin fs-600 {
+    font-size: $fs-600;
+    letter-spacing: 17px;
+  }
+  @mixin fs-500 {
+    font-size: $fs-500;
+    letter-spacing: 1.3px;
+  }
+  @mixin fs-400 {
+    font-size: $fs-400;
+    letter-spacing: 1.07143px;
+  }
+  @mixin fs-300 {
+    font-size: $fs-300;
+    letter-spacing: 10px;
+  }
+  @mixin fs-200 {
+    font-size: $fs-200;
+    letter-spacing: 1px;
+  }
+  
+  @mixin fw-regular {
+    font-weight: $fw-regular;
+  }
+  @mixin fw-medium {
+    font-weight: $fw-medium;
+  }
+  @mixin fw-bold {
+    font-weight: $fw-bold;
+  }

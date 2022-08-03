@@ -460,7 +460,7 @@ html:focus-within {
 }
 
 .radio-btn:hover,
-.radio-btn--hover {
+.radio-btn--active {
   border-color: hsl(var(--clr-orange-dark));
 }
 
@@ -479,10 +479,15 @@ html:focus-within {
   width: 16px;
   height: 18px;
   color: hsl(var(--clr-black) / 0.25);
+  transition: all 0.1s ease-in;
 }
 
 .quantity-btn button:hover,
 .quantity-btn button:active,
-.quantity-btn .quantity-btn--hover {
+.quantity-btn .radio-btn--active {
   color: hsl(var(--clr-orange-dark));
+}
+
+.quantity-btn button:active {
+  transform: scale(1.5);
 }

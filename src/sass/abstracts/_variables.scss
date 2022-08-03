@@ -1,0 +1,31 @@
+//  colors
+$clr-orange-dark: 22 65% 57%;
+$clr-orange-dark-2: 21 65% 57%;
+$clr-orange-ligth: 21 94% 75%;
+
+$clr-gray-ligth: 0 0% 98%;
+$clr-gray-ligther: 0 0% 95%;
+$clr-gray-dark: 0 0% 6%;
+
+$clr-white: 0 0% 100%;
+$clr-white-75: hsl(0 0% 100%/ 0.75);
+$clr-black: 0 0% 0%;
+
+//  font-sizes
+$fs-1000: clamp(2.25rem, 5.3vw + 1rem, 3.5rem); //  58px
+$fs-900: 2.5rem; //  40px
+$fs-800: 2rem; //  32px
+$fs-700: 1.75rem; //  28px
+$fs-600: 1.5rem; //  24px
+$fs-500: 1.125rem; //  18px
+$fs-400: 0.9375rem; //  15px
+$fs-300: 0.875rem; //  14px
+$fs-200: 0.8125rem; //  13px
+
+//  font-weight
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+//  font-familiy
+$ff-serif: "Manrope", serif;

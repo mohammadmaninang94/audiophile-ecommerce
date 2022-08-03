@@ -1,0 +1,54 @@
+@use "../../sass/abstracts" as *;
+
+header {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  background-image: url("../../../public/images/home/tablet/image-header.jpg");
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-position: bottom ;
+  background-color: hsl(0 0% 8%);
+  color: hsl($clr-white);
+  min-height: 37.5rem;
+
+  .header {
+    &__primary {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 1.5rem;
+      padding-block: 2rem;
+      border-bottom: 1px solid hsl(0 0% 100% / 0.1);
+    }
+
+    &__navigation {
+      position: fixed;
+      inset: 0 18vh 0 0;
+      padding: min(10rem, 15vh) 2rem;
+      z-index: 999;
+      transition: transform 0.5s ease-in-out;
+      transform: translateX(-100%);
+
+      & ul {
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+      }
+    }
+
+    &__mobile-btn {
+      display: block;
+      background: transparent;
+      background-image: url(../../assets/icon-hamburger.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      aspect-ratio: 1;
+      border: none;
+
+      & span {
+        @include sr-only;
+      }
+    }
+  }
+}

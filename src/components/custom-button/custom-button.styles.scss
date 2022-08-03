@@ -1,0 +1,93 @@
+@use "../../sass/abstracts" as *;
+
+.btn {
+  display: inline-block;
+  width: 10rem;
+  height: 3rem;
+  font-weight: $fw-bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding-block: 0.9375rem;
+  line-height: 1;
+}
+
+.btn__primary {
+  color: hsl($clr-white);
+  background-color: hsl($clr-orange-dark);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn__primary:hover,
+.btn__primary:focus {
+  background-color: hsl($clr-orange-ligth);
+}
+
+.btn__secondary {
+  color: hsl($clr-black);
+  background-color: hsl($clr-white);
+  border: 1px solid hsl($clr-black);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn__secondary:hover,
+.btn__secondary:focus {
+  color: hsl($clr-white);
+  background-color: hsl($clr-black);
+}
+
+.btn__tertiary{
+  color: hsl($clr-white);
+  background-color: hsl($clr-black);
+  border: 1px solid hsl($clr-black);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn__tertiary:hover,
+.btn__tertiary:focus {
+  background-color: hsl(0 0% 30%);
+  border-color: hsl(0 0% 30%);
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  font-weight: $fw-bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(0 0% 0% / 0.5);
+  padding: 1rem 2rem;
+  min-height: 57px;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
+}
+
+.link::before,
+.link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 0.2em;
+  right: 15px;
+  width: 8px;
+  border: 1px solid hsl($clr-orange-dark);
+}
+
+.link::before {
+  transform: rotate(45deg);
+  top: 1.4rem;
+}
+.link::after {
+  transform: rotate(-45deg);
+  bottom: 1.7rem;
+}
+
+.link:hover,
+.link:active {
+  color: hsl($clr-orange-dark);
+}

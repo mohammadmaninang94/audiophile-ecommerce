@@ -1,0 +1,118 @@
+@use "../../sass/abstracts" as *;
+
+.latest-section {
+  margin: 0rem 1.5rem 7.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  color: hsl($clr-white);
+
+  & figure {
+    border-radius: 8px;
+  }
+
+  & h1 {
+    @include fs-1000;
+    @include fw-bold;
+    @include uppercase;
+  }
+
+  & h4 {
+    @include fs-700;
+    @include fw-bold;
+    @include uppercase;
+  }
+
+  & p {
+    @include fs-400;
+    @include fw-medium;
+    color: $clr-white-75;
+  }
+
+  .zx9 {
+    @include bg-orange-dark-2;
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+    padding-block: 3.4375rem;
+    grid-template-rows: repeat(3, min-content);
+    background-image: url(../../../public/images/home/desktop/pattern-circles.svg);
+    background-position: center -123px;
+    background-size: 558px;
+    background-repeat: no-repeat;
+
+    & h1 {
+      width: 8ch;
+      line-height: 40px;
+    }
+
+    & img {
+      width: 53%;
+    }
+
+    & figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: center;
+      padding-inline: 1.5rem;
+    }
+
+    // &__circles {
+    //   position: absolute;
+    //   width: 320px;
+    //   aspect-ratio: 1;
+    //   border-radius: 50%;
+    //   border: .5px solid hsl(0 0% 85%);
+    //   top: -2px;
+
+    //   &::before {
+
+    //   }
+    // }
+  }
+
+  .zx7 {
+    position: relative;
+    color: hsl($clr-black);
+
+    & img {
+      border-radius: 8px;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: absolute;
+      top: 101px;
+      right: 101px;
+    }
+  }
+
+  .yx1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: hsl($clr-black);
+
+    & img,
+    & div {
+      border-radius: 8px;
+    }
+
+    & div {
+      background-color: hsl($clr-gray-ligther);
+      width: 327px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      padding-left: 1.5rem;
+    }
+  }
+}

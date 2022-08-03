@@ -1,0 +1,42 @@
+@use "../../sass/abstracts" as *;
+
+.hero {
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(1.5rem, 1fr) minmax(0, 24rem) minmax(
+      1.5rem,
+      1fr
+    );
+  grid-auto-rows: min-content;
+  gap: 1.5rem;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+
+  &__overline {
+    grid-column: 2;
+
+    @include fs-300;
+    @include fw-regular;
+    opacity: 0.5;
+  }
+
+  &__header {
+    grid-column: 2;
+    @include fs-1000;
+    @include fw-bold;
+    @include uppercase;
+    line-height: 40px;
+  }
+
+  &__body {
+    grid-column: 2;
+    @include fs-400;
+    @include fw-medium;
+    opacity: 0.5;
+  }
+
+  & .btn {
+    grid-column: 2;
+  }
+}
