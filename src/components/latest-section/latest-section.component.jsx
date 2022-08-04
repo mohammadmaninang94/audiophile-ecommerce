@@ -17,14 +17,14 @@ const LatestSection = () => {
                 <img src='/images/home/mobile/image-speaker-zx7.jpg' alt='zx7 speaker' />
                 <div>
                     <figcaption><h4>zx7 speaker</h4></figcaption>
-                    <CustomBtn text='see product' href='/' type={BtnType.TERTIARY} />
+                    <CustomBtn text='see product' href='/' type={BtnType.SECONDARY} />
                 </div>
             </figure>
             <figure className='yx1'>
                 <img src='/images/home/mobile/image-earphones-yx1.jpg' alt='yx1 earphones' />
                 <div>
                     <figcaption><h4>yx1 earphones</h4></figcaption>
-                    <CustomBtn text='see product' href='/' type={BtnType.TERTIARY} />
+                    <CustomBtn text='see product' href='/' type={BtnType.SECONDARY} />
                 </div>
             </figure>
         </section>
