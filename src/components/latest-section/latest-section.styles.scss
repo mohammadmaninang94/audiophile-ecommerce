@@ -106,12 +106,12 @@
 
     & div {
       background-color: hsl($clr-gray-ligther);
-      width: 327px;
-      height: 200px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
+      padding-block: 12%;
       padding-left: 1.5rem;
     }
   }

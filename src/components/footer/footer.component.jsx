@@ -10,25 +10,22 @@ import './footer.styles.scss';
 const Footer = () => {
     return (
         <footer>
-            <div>
-                <Link to='/'>
-                    <Logo />
-                </Link>
-                <nav>
-                    <Link to='/'>home</Link>
-                    <Link to='/headphones'>headphones</Link>
-                    <Link to='/speakers'>speakers</Link>
-                    <Link to='/earphones'>earphones</Link>
-                </nav>
+            <Link to='/' className='footer__logo'>
+                <Logo />
+            </Link>
+            <nav className='footer__nav'>
+                <Link to='/'>home</Link>
+                <Link to='/headphones'>headphones</Link>
+                <Link to='/speakers'>speakers</Link>
+                <Link to='/earphones'>earphones</Link>
+            </nav>
+            <p className='footer__about'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+            <div className='footer__icons'>
+                <FacebookIcon />
+                <TwitterIcon />
+                <InstagramIcon />
             </div>
-            <div>
-                <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
-                <div>
-                    <FacebookIcon />
-                    <TwitterIcon />
-                    <InstagramIcon />
-                </div>
-            </div>
+            <p className='footer__copyright'>Copyright 2021. All Rights Reserved</p>
         </footer>
     )
 };

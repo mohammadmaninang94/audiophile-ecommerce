@@ -1,5 +1,61 @@
-@use '../../sass/abstracts' as *;
+@use "../../sass/abstracts" as *;
 
 footer {
-    background-color: hsl($clr-gray-dark);
+  background-color: hsl($clr-gray-dark);
+  display: grid;
+  justify-items: center;
+  padding-bottom: 2.375rem;
+  padding-inline: 1.5rem;
+  gap: 2rem;
+}
+
+.footer {
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & svg {
+      display: block;
+      margin-top: 2rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 70%;
+      background-color: hsl($clr-orange-dark);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+
+    & a {
+      @include fs-200;
+      @include fw-bold;
+      @include uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: hsl($clr-white);
+    }
+  }
+
+  &__about,
+  &__copyright {
+    color: $clr-white-75;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    grid-row: 5;
+  }
 }
