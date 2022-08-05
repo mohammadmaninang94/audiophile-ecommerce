@@ -1,7 +1,7 @@
 @use "../../sass/abstracts" as *;
 
 footer {
-  background-color: hsl($clr-gray-dark);
+  background-color: $clr-gray-dark;
   display: grid;
   justify-items: center;
   padding-bottom: 2.375rem;
@@ -25,7 +25,7 @@ footer {
       display: block;
       height: 4px;
       width: 70%;
-      background-color: hsl($clr-orange-dark);
+      background-color: $clr-orange-dark;
     }
   }
 
@@ -41,7 +41,7 @@ footer {
       @include uppercase;
       letter-spacing: 2px;
       text-decoration: none;
-      color: hsl($clr-white);
+      color: $clr-white;
     }
   }
 

@@ -15,38 +15,38 @@
   /* colors */
 
   @mixin bg-orange-dark {
-    background-color: hsl($clr-orange-dark);
+    background-color: $clr-orange-dark
   }
   @mixin bg-orange-dark-2 {
-    background-color: hsl($clr-orange-dark-2);
+    background-color: $clr-orange-dark-2
   }
   @mixin bg-orange-ligth {
-    background-color: hsl($clr-orange-ligth);
+    background-color: $clr-orange-ligth
   }
   @mixin bg-gray-ligth {
-    background-color: hsl($clr-gray-ligth);
+    background-color: $clr-gray-ligth
   }
   @mixin bg-black {
-    background-color: hsl($clr-black);
+    background-color: $clr-black
   }
   @mixin bg-white {
-    background-color: hsl($clr-white);
+    background-color: $clr-white
   }
   @mixin bg-gray-ligth {
-    background-color: hsl($clr-gray-ligth);
+    background-color: $clr-gray-ligth
   }
   @mixin bg-gray-ligther {
-    background-color: hsl($clr-gray-ligther);
+    background-color: $clr-gray-ligther
   }
   @mixin bg-gray-dark {
-    background-color: hsl($clr-gray-dark);
+    background-color: $clr-gray-dark
   }
   
   @mixin text-gray {
-    color: hsl($clr-black);
+    color: $clr-black
   }
   @mixin text-orange-dark {
-    color: hsl($clr-orange-dark);
+    color: $clr-orange-dark
   }
   
   /* typography */
@@ -57,11 +57,10 @@
   
   @mixin fs-1000 {
     font-size: $fs-1000;
-    letter-spacing: 2px;
   }
   @mixin fs-900 {
     font-size: $fs-900;
-    letter-spacing: 1.5px;
+    letter-spacing: clamp(1px, 0.0358em, 1.43px);
   }
   @mixin fs-800 {
     font-size: $fs-800;

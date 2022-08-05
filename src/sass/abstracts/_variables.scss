@@ -1,19 +1,20 @@
 //  colors
-$clr-orange-dark: 22 65% 57%;
-$clr-orange-dark-2: 21 65% 57%;
-$clr-orange-ligth: 21 94% 75%;
+$clr-orange-dark: hsl(22 65% 57%);
+$clr-orange-dark-2: hsl(21 65% 57%);
+$clr-orange-ligth: hsl(21 94% 75%);
 
-$clr-gray-ligth: 0 0% 98%;
-$clr-gray-ligther: 0 0% 95%;
-$clr-gray-dark: 0 0% 6%;
+$clr-gray-ligth: hsl(0 0% 98%);
+$clr-gray-ligther: hsl(0 0% 95%);
+$clr-gray-dark: hsl(0 0% 6%);
 
-$clr-white: 0 0% 100%;
+$clr-white: hsl(0 0% 100%);
 $clr-white-75: hsl(0 0% 100%/ 0.75);
-$clr-black: 0 0% 0%;
+$clr-black: hsl(0 0% 0%);
+$clr-black-50: hsl(0 0% 0%/ 0.5);
 
 //  font-sizes
 $fs-1000: clamp(2.25rem, 5.3vw + 1rem, 3.5rem); //  58px
-$fs-900: 2.5rem; //  40px
+$fs-900: clamp(1.75rem, 3.3vw + 1rem, 2.5rem); //  40px
 $fs-800: 2rem; //  32px
 $fs-700: 1.75rem; //  28px
 $fs-600: 1.5rem; //  24px

@@ -43,8 +43,8 @@ ul {
 body {
   font-family: $ff-serif;
   font-size: $fs-400;
-  color: hsl($clr-black);
-  background-color: hsl($clr-white);
+  color: $clr-black;
+  background-color: $clr-white;
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -80,4 +80,8 @@ select {
 //  Set core root defaults 
 html:focus-within {
   scroll-behavior: smooth;
+}
+
+main {
+  padding-inline: 1.5rem;
 }

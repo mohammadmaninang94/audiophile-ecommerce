@@ -9,7 +9,7 @@ header {
   background-repeat: no-repeat;
   background-position: bottom ;
   background-color: hsl(0 0% 8%);
-  color: hsl($clr-white);
+  color: $clr-white;
   min-height: 37.5rem;
 
   .header {

@@ -1,12 +1,12 @@
 @use "../../sass/abstracts" as *;
 
 .latest-section {
-  margin: 0rem 1.5rem 7.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  color: hsl($clr-white);
+  color: $clr-white;
+  padding-bottom: 7.5rem;
 
   & figure {
     border-radius: 8px;
@@ -77,7 +77,7 @@
 
   .zx7 {
     position: relative;
-    color: hsl($clr-black);
+    color: $clr-black;
 
     & img {
       border-radius: 8px;
@@ -97,7 +97,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    color: hsl($clr-black);
+    color: $clr-black;
 
     & img,
     & div {
@@ -105,7 +105,7 @@
     }
 
     & div {
-      background-color: hsl($clr-gray-ligther);
+      background-color: $clr-gray-ligther;
       width: 100%;
       display: flex;
       flex-direction: column;

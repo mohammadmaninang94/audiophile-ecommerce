@@ -16,33 +16,33 @@
 }
 
 .btn__primary {
-  color: hsl($clr-white);
-  background-color: hsl($clr-orange-dark);
+  color: $clr-white;
+  background-color: $clr-orange-dark;
   transition: background-color 0.2s ease-in-out;
 }
 
 .btn__primary:hover,
 .btn__primary:focus {
-  background-color: hsl($clr-orange-ligth);
+  background-color: $clr-orange-ligth;
 }
 
 .btn__secondary {
-  color: hsl($clr-black);
-  background-color: hsl($clr-white);
-  border: 1px solid hsl($clr-black);
+  color: $clr-black;
+  background-color: $clr-white;
+  border: 1px solid $clr-black;
   transition: all 0.2s ease-in-out;
 }
 
 .btn__secondary:hover,
 .btn__secondary:focus {
-  color: hsl($clr-white);
-  background-color: hsl($clr-black);
+  color: $clr-white;
+  background-color: $clr-black;
 }
 
 .btn__tertiary{
-  color: hsl($clr-white);
-  background-color: hsl($clr-black);
-  border: 1px solid hsl($clr-black);
+  color: $clr-white;
+  background-color: $clr-black;
+  border: 1px solid $clr-black;
   transition: all 0.2s ease-in-out;
 }
 
@@ -75,7 +75,7 @@
   border-radius: 0.2em;
   right: 15px;
   width: 8px;
-  border: 1px solid hsl($clr-orange-dark);
+  border: 1px solid $clr-orange-dark;
 }
 
 .link::before {
@@ -89,5 +89,5 @@
 
 .link:hover,
 .link:active {
-  color: hsl($clr-orange-dark);
+  color: $clr-orange-dark;
 }
