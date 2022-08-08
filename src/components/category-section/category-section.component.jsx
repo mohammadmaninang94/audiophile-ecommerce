@@ -1,4 +1,4 @@
-import CustomBtn, { BtnType } from '../custom-button/custom-button.component';
+import CustomBtn, { ctaType } from '../custom-cta/custom-cta.component';
 
 import './category-section.styles.scss';
 
@@ -30,7 +30,7 @@ const CategorySection = () => {
                     <div></div>
                     <div>
                         <h6>{item.title}</h6>
-                        <CustomBtn text='shop' href={item.slug} type={BtnType.LINK} />
+                        <CustomBtn text='shop' href={item.slug} type={ctaType.LINK} />
                     </div>
                 </div>
             ))}
