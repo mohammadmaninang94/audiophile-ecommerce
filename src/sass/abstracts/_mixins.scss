@@ -60,7 +60,7 @@
   }
   @mixin fs-900 {
     font-size: $fs-900;
-    letter-spacing: clamp(1px, 0.0358em, 1.43px);
+    letter-spacing: 0.0358em;
   }
   @mixin fs-800 {
     font-size: $fs-800;
