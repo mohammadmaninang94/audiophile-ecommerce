@@ -57,6 +57,12 @@
   
   @mixin fs-1000 {
     font-size: $fs-1000;
+    letter-spacing: 0.0358em;
+    line-height: 1.12;
+
+    @media only screen and (min-width: 35em) {
+      line-height: 1.036;
+    }
   }
   @mixin fs-900 {
     font-size: $fs-900;
@@ -80,7 +86,8 @@
   }
   @mixin fs-400 {
     font-size: $fs-400;
-    letter-spacing: 1.07143px;
+    line-height: 1.667;
+    letter-spacing: 0.066875em;
   }
   @mixin fs-300 {
     font-size: $fs-300;
@@ -88,7 +95,7 @@
   }
   @mixin fs-200 {
     font-size: $fs-200;
-    letter-spacing: 1px;
+    letter-spacing: 0.07692em;
   }
   
   @mixin fw-regular {

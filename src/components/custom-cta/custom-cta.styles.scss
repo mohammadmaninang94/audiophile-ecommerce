@@ -1,12 +1,13 @@
 @use "../../sass/abstracts" as *;
 
 .btn {
+  @include fw-bold;
+  @include fs-200;
+  @include uppercase;
+
   display: inline-block;
   width: 10rem;
   height: 3rem;
-  font-weight: $fw-bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -28,7 +29,7 @@
 
 .btn__secondary {
   color: $clr-black;
-  background-color: $clr-white;
+  background-color: transparent;
   border: 1px solid $clr-black;
   transition: all 0.2s ease-in-out;
 }
@@ -39,7 +40,7 @@
   background-color: $clr-black;
 }
 
-.btn__tertiary{
+.btn__tertiary {
   color: $clr-white;
   background-color: $clr-black;
   border: 1px solid $clr-black;
@@ -53,11 +54,12 @@
 }
 
 .link {
+  @include fw-bold;
+  @include fs-200;
+  @include uppercase;
+
   display: inline-block;
   position: relative;
-  font-weight: $fw-bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   color: hsl(0 0% 0% / 0.5);

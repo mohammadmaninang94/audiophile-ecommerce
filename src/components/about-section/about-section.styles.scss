@@ -5,7 +5,12 @@
   flex-direction: column;
   gap: 2.5rem;
   text-align: center;
-  padding-bottom: 7.5rem;
+  margin-bottom: 7.5rem;
+
+  @media only screen and (min-width: 35em) {
+    margin-bottom: 6rem;
+    gap: 4rem;
+  }
 
   & h2 {
     @include fs-900;
@@ -26,5 +31,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 62ch;
+    align-self: center;
   }
 }

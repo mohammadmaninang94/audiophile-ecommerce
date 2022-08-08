@@ -84,4 +84,8 @@ html:focus-within {
 
 main {
   padding-inline: 1.5rem;
+
+  @media only screen and (min-width: 35em) {
+    padding-inline: 2.5rem;
+  }
 }

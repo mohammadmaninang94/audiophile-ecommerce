@@ -20,7 +20,7 @@ const Header = () => {
                         <Link to='/earphones'>earphones</Link>
                     </ul>
                 </nav>
-                <Link to='/'>
+                <Link className='header__logo' to='/'>
                     <Logo />
                 </Link>
                 <CartIcon />

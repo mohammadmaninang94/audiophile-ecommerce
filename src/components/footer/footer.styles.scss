@@ -7,6 +7,17 @@ footer {
   padding-bottom: 2.375rem;
   padding-inline: 1.5rem;
   gap: 2rem;
+
+  @media only screen and (min-width: 35em) {
+    padding-inline: 2.5rem;
+    justify-items: start;
+    grid-template-columns: 1fr min-content;
+    padding-bottom: 2.875rem;
+
+    & > *:where(:not(:last-child)) {
+      grid-column: 1 / -1;
+    }
+  }
 }
 
 .footer {
@@ -15,9 +26,17 @@ footer {
     flex-direction: column;
     align-items: center;
 
+    @media only screen and (min-width: 35em) {
+      align-items: start;
+    }
+
     & svg {
       display: block;
       margin-top: 2rem;
+
+      @media only screen and (min-width: 35em) {
+        margin-top: 3.75rem;
+      }
     }
 
     &::before {
@@ -35,6 +54,11 @@ footer {
     gap: 1rem;
     text-align: center;
 
+    @media only screen and (min-width: 35em) {
+      flex-direction: row;
+      gap: 2.125rem;
+    }
+
     & a {
       @include fs-200;
       @include fw-bold;
@@ -50,12 +74,17 @@ footer {
     color: $clr-white-75;
     text-align: center;
     line-height: 25px;
+
+    @media only screen and (min-width: 35em) {
+      text-align: left;
+    }
   }
 
   &__icons {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
-    grid-row: 5;
+    grid-row: 4;
+    grid-column: 2;
   }
 }

@@ -26,7 +26,6 @@
     @include fs-1000;
     @include fw-bold;
     @include uppercase;
-    line-height: 40px;
   }
 
   &__body {
@@ -34,9 +33,15 @@
     @include fs-400;
     @include fw-medium;
     opacity: 0.5;
+    max-width: 40ch;
   }
 
-  & .btn {
+  & a {
     grid-column: 2;
+    margin-top: .25rem;
+
+    @media only screen and (min-width: 35em) {
+      margin-top: 1rem;
+    }
   }
 }

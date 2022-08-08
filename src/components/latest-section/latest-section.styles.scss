@@ -6,7 +6,11 @@
   justify-content: space-between;
   gap: 2rem;
   color: $clr-white;
-  padding-bottom: 7.5rem;
+  margin-bottom: 7.5rem;
+
+  @media only screen and (min-width: 35em) {
+    margin-bottom: 6rem;
+  }
 
   & figure {
     border-radius: 8px;
@@ -43,13 +47,27 @@
     background-size: 558px;
     background-repeat: no-repeat;
 
+    @media only screen and (min-width: 35em) {
+      padding-top: 3.25rem;
+      padding-bottom: 4rem;
+      background-size: 135%;
+      background-position: center -280px;
+    }
+
     & h1 {
       width: 8ch;
-      line-height: 40px;
     }
 
     & img {
       width: 53%;
+
+      @media only screen and (min-width: 35em) {
+        width: 28%;
+      }
+    }
+
+    & p {
+      max-width: 40ch;
     }
 
     & figcaption {
@@ -59,6 +77,12 @@
       align-items: center;
       text-align: center;
       padding-inline: 1.5rem;
+      margin-top: 0.5rem;
+
+      @media only screen and (min-width: 35em) {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
     }
 
     // &__circles {
@@ -81,6 +105,7 @@
 
     & img {
       border-radius: 8px;
+      width: 100%;
     }
 
     & div {
@@ -89,7 +114,11 @@
       gap: 2rem;
       position: absolute;
       top: 101px;
-      right: 101px;
+      left: 24px;
+
+      @media only screen and (min-width: 35em) {
+        left: 62px;
+      }
     }
   }
 
@@ -99,9 +128,15 @@
     gap: 1.5rem;
     color: $clr-black;
 
+    @media only screen and (min-width: 35em) {
+      flex-direction: row;
+      gap: 0.6875rem;
+    }
+
     & img,
     & div {
       border-radius: 8px;
+      width: 100%;
     }
 
     & div {
@@ -111,7 +146,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
-      padding-block: 12%;
+      padding-block: 2.5625rem;
       padding-left: 1.5rem;
     }
   }

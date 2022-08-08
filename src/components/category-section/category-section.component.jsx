@@ -27,7 +27,6 @@ const CategorySection = () => {
             {categoryItems.map(item => (
                 <div key={item.title} className='category-box'>
                     <img src={item.image} alt={item.title} />
-                    <div></div>
                     <div>
                         <h6>{item.title}</h6>
                         <CustomBtn text='shop' href={item.slug} type={ctaType.LINK} />
