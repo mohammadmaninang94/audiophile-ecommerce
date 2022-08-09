@@ -1,7 +1,23 @@
 .category-section {
-    margin-top: 2.5rem;
+  margin-top: 2.5rem;
 
-    @media only screen and (min-width: 35em) {
-        margin-top: 6rem;
-    }
+  @media only screen and (min-width: 35em) {
+    margin-top: 6rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    margin-top: 7.5rem;
+  }
+}
+
+.about-section {
+  margin-bottom: 7.5rem;
+
+  @media only screen and (min-width: 35em) {
+    margin-bottom: 6rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    margin-bottom: 12.5rem;
+  }
 }

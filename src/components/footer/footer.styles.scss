@@ -1,6 +1,6 @@
 @use "../../sass/abstracts" as *;
 
-footer {
+.footer {
   background-color: $clr-gray-dark;
   display: grid;
   justify-items: center;
@@ -17,10 +17,47 @@ footer {
     & > *:where(:not(:last-child)) {
       grid-column: 1 / -1;
     }
-  }
-}
 
-.footer {
+    &__icons {
+      grid-row: 4;
+      grid-column: 2;
+    }
+  }
+
+  @media only screen and (min-width: 73em) {
+    grid-template-columns: minmax(2.5rem, 1fr) repeat(2, minmax(0, 34.75rem)) minmax(
+        2.5rem,
+        1fr
+      );
+    gap: 2.25rem;
+
+    &__logo {
+      grid-column: 2 / 3;
+    }
+
+    &__nav {
+      grid-column: 3 / 4;
+      align-self: end;
+      justify-self: end;
+    }
+
+    &__about {
+      grid-column: 2 / 3;
+    }
+
+    &__icons {
+      grid-column: 3 / 4;
+      grid-row: 2;
+      justify-self: end;
+    }
+
+    &__copyright {
+      grid-column: 2 / 3;
+      grid-row: 3;
+      margin-top: 1.25rem;
+    }
+  }
+
   &__logo {
     display: flex;
     flex-direction: column;
@@ -36,6 +73,10 @@ footer {
 
       @media only screen and (min-width: 35em) {
         margin-top: 3.75rem;
+      }
+
+      @media only screen and (min-width: 90em) {
+        margin-top: 4.4375rem;
       }
     }
 
@@ -66,6 +107,11 @@ footer {
       letter-spacing: 2px;
       text-decoration: none;
       color: $clr-white;
+
+      &:hover,
+      &:active {
+        color: $clr-orange-dark;
+      }
     }
   }
 
@@ -84,7 +130,15 @@ footer {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
-    grid-row: 4;
-    grid-column: 2;
+
+    & svg {
+      cursor: pointer;
+      fill: $clr-white;
+
+      &:hover,
+      &:active {
+        fill: $clr-orange-dark;
+      }
+    }
   }
 }

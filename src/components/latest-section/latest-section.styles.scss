@@ -54,6 +54,30 @@
       background-position: center -280px;
     }
 
+    @media only screen and (min-width: 73em) {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      justify-content: end;
+      padding-top: 8.3125rem;
+      padding-bottom: 0;
+      position: relative;
+      max-height: 35rem;
+      overflow: hidden;
+      background-position: -152px -24px;
+      background-size: 82%;
+
+      & > *:first-child {
+        grid-row: 1 / -1;
+        align-self: end;
+        justify-self: center;
+      }
+
+      & > *:not(:first-child) {
+        grid-column: 2 / 3;
+        justify-self: start;
+      }
+    }
+
     & h1 {
       width: 8ch;
     }
@@ -63,6 +87,11 @@
 
       @media only screen and (min-width: 35em) {
         width: 28%;
+      }
+
+      @media only screen and (min-width: 73em) {
+        width: 59%;
+        // z-index: -1;
       }
     }
 
@@ -82,6 +111,13 @@
       @media only screen and (min-width: 35em) {
         margin-top: 2.5rem;
         margin-bottom: 1rem;
+      }
+
+      @media only screen and (min-width: 73em) {
+        align-items: flex-start;
+        padding-inline: 0;
+        text-align: left;
+        margin-top: 0;
       }
     }
 
@@ -113,11 +149,16 @@
       flex-direction: column;
       gap: 2rem;
       position: absolute;
-      top: 101px;
+      top: 50%;
+      transform: translateY(-50%);
       left: 24px;
 
       @media only screen and (min-width: 35em) {
         left: 62px;
+      }
+
+      @media only screen and (min-width: 73em) {
+        left: 95px;
       }
     }
   }
@@ -133,7 +174,12 @@
       gap: 0.6875rem;
     }
 
+    @media only screen and (min-width: 73em) {
+      gap: 1.875rem;
+    }
+
     & img,
+    & picture,
     & div {
       border-radius: 8px;
       width: 100%;
@@ -147,7 +193,15 @@
       justify-content: center;
       gap: 2rem;
       padding-block: 2.5625rem;
-      padding-left: 1.5rem;
+
+      & > * {
+        margin-left: 1.5rem;
+        
+        @media only screen and (min-width: 73em) {
+          margin-left: 5.9375rem;
+        }
+      }
+
     }
   }
 }

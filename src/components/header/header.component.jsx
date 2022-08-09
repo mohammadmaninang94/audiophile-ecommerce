@@ -12,6 +12,9 @@ const Header = () => {
         <header>
             <div className='header__primary'>
                 <button type="button" className='header__mobile-btn'><span>Menu</span></button>
+                <Link className='header__logo' to='/'>
+                    <Logo />
+                </Link>
                 <nav className='header__navigation'>
                     <ul>
                         <Link to='/'>home</Link>
@@ -20,9 +23,6 @@ const Header = () => {
                         <Link to='/earphones'>earphones</Link>
                     </ul>
                 </nav>
-                <Link className='header__logo' to='/'>
-                    <Logo />
-                </Link>
                 <CartIcon />
             </div>
             <Hero />

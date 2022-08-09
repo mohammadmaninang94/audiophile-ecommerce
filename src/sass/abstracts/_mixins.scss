@@ -1,109 +1,114 @@
 @use "./variables" as *;
 
 @mixin sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap; /* added line */
-    border: 0;
-  }
-  
-  /* colors */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
 
-  @mixin bg-orange-dark {
-    background-color: $clr-orange-dark
-  }
-  @mixin bg-orange-dark-2 {
-    background-color: $clr-orange-dark-2
-  }
-  @mixin bg-orange-ligth {
-    background-color: $clr-orange-ligth
-  }
-  @mixin bg-gray-ligth {
-    background-color: $clr-gray-ligth
-  }
-  @mixin bg-black {
-    background-color: $clr-black
-  }
-  @mixin bg-white {
-    background-color: $clr-white
-  }
-  @mixin bg-gray-ligth {
-    background-color: $clr-gray-ligth
-  }
-  @mixin bg-gray-ligther {
-    background-color: $clr-gray-ligther
-  }
-  @mixin bg-gray-dark {
-    background-color: $clr-gray-dark
-  }
-  
-  @mixin text-gray {
-    color: $clr-black
-  }
-  @mixin text-orange-dark {
-    color: $clr-orange-dark
-  }
-  
-  /* typography */
-  
-  @mixin uppercase {
-    text-transform: uppercase;
-  }
-  
-  @mixin fs-1000 {
-    font-size: $fs-1000;
-    letter-spacing: 0.0358em;
-    line-height: 1.12;
+/* colors */
 
-    @media only screen and (min-width: 35em) {
-      line-height: 1.036;
-    }
+@mixin bg-orange-dark {
+  background-color: $clr-orange-dark;
+}
+@mixin bg-orange-dark-2 {
+  background-color: $clr-orange-dark-2;
+}
+@mixin bg-orange-ligth {
+  background-color: $clr-orange-ligth;
+}
+@mixin bg-gray-ligth {
+  background-color: $clr-gray-ligth;
+}
+@mixin bg-black {
+  background-color: $clr-black;
+}
+@mixin bg-white {
+  background-color: $clr-white;
+}
+@mixin bg-gray-ligth {
+  background-color: $clr-gray-ligth;
+}
+@mixin bg-gray-ligther {
+  background-color: $clr-gray-ligther;
+}
+@mixin bg-gray-dark {
+  background-color: $clr-gray-dark;
+}
+
+@mixin text-gray {
+  color: $clr-black;
+}
+@mixin text-orange-dark {
+  color: $clr-orange-dark;
+}
+
+/* typography */
+
+@mixin uppercase {
+  text-transform: uppercase;
+}
+
+@mixin fs-1000 {
+  font-size: $fs-1000;
+  letter-spacing: 0.0358em;
+  line-height: 1.12;
+
+  @media only screen and (min-width: 35em) {
+    line-height: 1.036;
   }
-  @mixin fs-900 {
-    font-size: $fs-900;
-    letter-spacing: 0.0358em;
+}
+@mixin fs-900 {
+  font-size: $fs-900;
+  letter-spacing: 0.0358em;
+  line-height: 1.34;
+
+  @media only screen and (min-width: 35em) {
+    line-height: 1.1;
   }
-  @mixin fs-800 {
-    font-size: $fs-800;
-    letter-spacing: 1.15px;
-  }
-  @mixin fs-700 {
-    font-size: $fs-700;
-    letter-spacing: 2px;
-  }
-  @mixin fs-600 {
-    font-size: $fs-600;
-    letter-spacing: 17px;
-  }
-  @mixin fs-500 {
-    font-size: $fs-500;
-    letter-spacing: 1.3px;
-  }
-  @mixin fs-400 {
-    font-size: $fs-400;
-    line-height: 1.667;
-    letter-spacing: 0.066875em;
-  }
-  @mixin fs-300 {
-    font-size: $fs-300;
-    letter-spacing: 10px;
-  }
-  @mixin fs-200 {
-    font-size: $fs-200;
-    letter-spacing: 0.07692em;
-  }
-  
-  @mixin fw-regular {
-    font-weight: $fw-regular;
-  }
-  @mixin fw-medium {
-    font-weight: $fw-medium;
-  }
-  @mixin fw-bold {
-    font-weight: $fw-bold;
-  }
+}
+@mixin fs-800 {
+  font-size: $fs-800;
+  letter-spacing: 0.0359em;
+}
+@mixin fs-700 {
+  font-size: $fs-700;
+  letter-spacing: 2px;
+}
+@mixin fs-600 {
+  font-size: $fs-600;
+  letter-spacing: 0.7083em;
+}
+@mixin fs-500 {
+  font-size: $fs-500;
+  letter-spacing: 0.0722em;
+}
+@mixin fs-400 {
+  font-size: $fs-400;
+  line-height: 1.667;
+  letter-spacing: 0.066875em;
+}
+@mixin fs-300 {
+  font-size: $fs-300;
+  letter-spacing: 0.7142em;
+}
+@mixin fs-200 {
+  font-size: $fs-200;
+  letter-spacing: 0.07692em;
+}
+
+@mixin fw-regular {
+  font-weight: $fw-regular;
+}
+@mixin fw-medium {
+  font-weight: $fw-medium;
+}
+@mixin fw-bold {
+  font-weight: $fw-bold;
+}

@@ -5,11 +5,15 @@
   flex-direction: column;
   gap: 2.5rem;
   text-align: center;
-  margin-bottom: 7.5rem;
 
   @media only screen and (min-width: 35em) {
-    margin-bottom: 6rem;
     gap: 4rem;
+  }
+
+  @media only screen and (min-width: 73em) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
   }
 
   & h2 {
@@ -33,5 +37,11 @@
     gap: 2rem;
     max-width: 62ch;
     align-self: center;
+
+    @media only screen and (min-width: 73em) {
+      order: 0;
+      max-width: 49ch;
+      text-align: left;
+    }
   }
 }

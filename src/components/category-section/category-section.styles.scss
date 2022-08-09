@@ -14,6 +14,10 @@
     margin-bottom: 6rem;
   }
 
+  @media only screen and (min-width: 90em) {
+    gap: 1.875rem;
+  }
+
   .category-box {
     position: relative;
     min-height: 13.5625rem;
@@ -46,6 +50,15 @@
 
       @media only screen and (min-width: 35em) {
         width: 70%;
+      }
+
+      @media only screen and (min-width: 64em) { 
+        top: -10px;
+        width: 55%; // maybe we can use vw
+      }
+
+      @media only screen and (min-width: 73em) {
+        top: -20px;
       }
     }
 

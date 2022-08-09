@@ -9,7 +9,7 @@ import './footer.styles.scss';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
             <Link to='/' className='footer__logo'>
                 <Logo />
             </Link>

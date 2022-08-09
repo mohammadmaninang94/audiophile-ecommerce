@@ -9,8 +9,8 @@ const AboutSection = () => {
             </div>
             <picture>
                 <source media="(max-width: 375px)" srcSet="/images/shared/mobile/image-best-gear.jpg" />
-                <source media="(max-width: 768px)" srcSet="/images/shared/tablet/image-best-gear.jpg" />
-                <source media="(min-width: 769px)" srcSet="/images/shared/desktop/image-best-gear.jpg" />
+                <source media="(max-width: 1024px)" srcSet="/images/shared/tablet/image-best-gear.jpg" />
+                <source media="(min-width: 1025px)" srcSet="/images/shared/desktop/image-best-gear.jpg" />
                 <img src="/images/shared/mobile/image-best-gear.jpg" alt="zx7 speaker" />
             </picture>
         </section>

@@ -1,17 +1,16 @@
 @use "../../sass/abstracts" as *;
-//  Reset 
+//  Reset
 
+//  https://piccalil.li/blog/a-modern-css-reset/
 
-//  https://piccalil.li/blog/a-modern-css-reset/ 
-
-//  Box sizing 
+//  Box sizing
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-//  Reset margins 
+//  Reset margins
 body,
 h1,
 h2,
@@ -37,9 +36,10 @@ p {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 
-//  set up the body 
+//  set up the body
 body {
   font-family: $ff-serif;
   font-size: $fs-400;
@@ -49,15 +49,15 @@ body {
   min-height: 100vh;
 }
 
-//  make images easier to work with 
+//  make images easier to work with
 img,
 picture {
   max-width: 100%;
   display: block;
 }
 
-//  make form elements easier to work with 
-//  Inherit fonts for inputs and buttons 
+//  make form elements easier to work with
+//  Inherit fonts for inputs and buttons
 input,
 button,
 textarea,
@@ -65,7 +65,7 @@ select {
   font: inherit;
 }
 
-//  remove animations for people who've turned them off 
+//  remove animations for people who've turned them off
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -77,7 +77,7 @@ select {
   }
 }
 
-//  Set core root defaults 
+//  Set core root defaults
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -86,6 +86,27 @@ main {
   padding-inline: 1.5rem;
 
   @media only screen and (min-width: 35em) {
-    padding-inline: 2.5rem;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 69.5rem) minmax(
+        1rem,
+        1fr
+      );
+
+    & > * {
+      grid-column: 2;
+    }
   }
+
+  // @media only screen and (min-width: 73em) {
+  //   display: grid;
+  //   grid-template-columns: minmax(10.3125rem, 1fr) minmax(0, 70rem) minmax(
+  //       10.3125rem,
+  //       1fr
+  //     );
+  //   padding-inline: 0;
+
+  //   & > * {
+  //     grid-column: 2;
+  //   }
+  // }
 }

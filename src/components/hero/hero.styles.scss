@@ -13,32 +13,46 @@
   justify-items: center;
   text-align: center;
 
-  &__overline {
+  & > * {
     grid-column: 2;
+  }
 
+  @media only screen and (min-width: 73em) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-items: start;
+    text-align: left;
+
+    & > * {
+      grid-column: 1;
+    }
+  }
+
+  &__overline {
     @include fs-300;
     @include fw-regular;
     opacity: 0.5;
   }
 
   &__header {
-    grid-column: 2;
     @include fs-1000;
     @include fw-bold;
     @include uppercase;
   }
 
   &__body {
-    grid-column: 2;
     @include fs-400;
     @include fw-medium;
     opacity: 0.5;
     max-width: 40ch;
+
+    @media only screen and (min-width: 73em) {
+      max-width: 45ch;
+    }
   }
 
   & a {
-    grid-column: 2;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
 
     @media only screen and (min-width: 35em) {
       margin-top: 1rem;
