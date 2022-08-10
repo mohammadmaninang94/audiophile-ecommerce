@@ -61,6 +61,16 @@ header {
       //     background-color: hsl(0 0% 10%);
       //   }
       // }
+
+      & svg {
+        cursor: pointer;
+        fill: $clr-white;
+
+        &:hover,
+        &:active {
+          fill: $clr-orange-dark;
+        }
+      }
     }
 
     &__navigation {
