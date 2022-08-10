@@ -29,7 +29,7 @@ const CategorySection = () => {
                     <img src={item.image} alt={item.title} />
                     <div>
                         <h6>{item.title}</h6>
-                        <CustomBtn text='shop' href={item.slug} type={ctaType.LINK} />
+                        <CustomBtn href={item.slug} type={ctaType.LINK}>shop</CustomBtn>
                     </div>
                 </div>
             ))}
