@@ -5,7 +5,7 @@ header {
   display: grid;
   grid-template-rows: min-content 1fr;
   background-image: url("../../../public/images/home/mobile/image-header.jpg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
   background-color: hsl(0 0% 10%);
@@ -15,6 +15,11 @@ header {
   @media only screen and (min-width: 35em) {
     background-image: url("../../../public/images/home/tablet/image-header.jpg");
     min-height: 45.5625rem;
+    background-size: cover;
+  }
+
+  @media only screen and (min-width: 50em) {
+    background-size: contain;
   }
 
   @media only screen and (min-width: 73em) {
@@ -23,10 +28,14 @@ header {
         1fr
       );
     background-image: url("../../../public/images/home/desktop/image-hero.jpg");
-    background-size: contain;
+    background-size: cover;
     & > * {
       grid-column: 2;
     }
+  }
+
+  @media only screen and (min-width: 90em) {
+    background-size: contain;
   }
 
   .header {
