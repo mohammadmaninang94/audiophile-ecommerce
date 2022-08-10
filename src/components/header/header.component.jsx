@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
 
 import Hero from '../../components/hero/hero.component';
 import CategorySection from '../category-section/category-section.component';
@@ -47,10 +47,18 @@ const Header = () => {
                     </Link>
                     <nav className='header__navigation'>
                         <ul>
-                            <Link to='/'>home</Link>
-                            <Link to='/headphones'>headphones</Link>
-                            <Link to='/speakers'>speakers</Link>
-                            <Link to='/earphones'>earphones</Link>
+                            <NavLink to='/'
+                                className={({ isActive }) => isActive ? 'active' : undefined
+                                }>home</NavLink>
+                            <NavLink to='/headphones'
+                                className={({ isActive }) => isActive ? 'active' : undefined
+                                }>headphones</NavLink>
+                            <NavLink to='/speakers'
+                                className={({ isActive }) => isActive ? 'active' : undefined
+                                }>speakers</NavLink>
+                            <NavLink to='/earphones'
+                                className={({ isActive }) => isActive ? 'active' : undefined
+                                }>earphones</NavLink>
                         </ul>
                     </nav>
                     <CartIcon />

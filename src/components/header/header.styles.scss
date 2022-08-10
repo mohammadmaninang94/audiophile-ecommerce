@@ -99,8 +99,13 @@ header {
         text-decoration: none;
 
         &:hover,
-        &:active {
+        &:active,
+        &.active {
           color: $clr-orange-dark;
+        }
+
+        &.active {
+          cursor: default;
         }
       }
 
