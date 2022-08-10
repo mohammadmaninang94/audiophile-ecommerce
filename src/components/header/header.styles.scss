@@ -1,7 +1,6 @@
 @use "../../sass/abstracts" as *;
 
 header {
-  position: relative;
   display: grid;
   grid-template-rows: min-content 1fr;
   background-image: url("../../../public/images/home/mobile/image-header.jpg");
@@ -49,6 +48,19 @@ header {
       @media only screen and (min-width: 35em) {
         gap: 2.625rem;
       }
+
+      @media only screen and (min-width: 73em) {
+        padding-inline: 0;
+      }
+      // @media only screen and (max-width: 64em) {
+      //   &.sticky {
+      //     position: fixed;
+      //     width: 100%;
+      //     top: 0;
+      //     z-index: 999;
+      //     background-color: hsl(0 0% 10%);
+      //   }
+      // }
     }
 
     &__navigation {
@@ -113,5 +125,50 @@ header {
         flex: none;
       }
     }
+  }
+}
+
+.menu-visible {
+  position: relative;
+}
+
+.mobile-menu {
+  height: calc(100% - 91px); // 91px top: value
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 91px;
+  z-index: 999;
+  visibility: hidden;
+  background-color: hsl(0 0% 0% / 0.4);
+  // backdrop-filter: blur(2px);
+
+  & .category-section {
+    color: $clr-black;
+    background-color: $clr-white;
+    margin: 0;
+    border-radius: 0px 0px 8px 8px;
+    padding-block: 2rem;
+    padding-inline: 1.5rem;
+    gap: 1rem;
+
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+      visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &.visible {
+    background-color: hsl(0 0% 0% / 0.4);
+    visibility: visible;
+
+    .category-section {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  @media only screen and (min-width: 73em) {
+    display: none;
   }
 }
