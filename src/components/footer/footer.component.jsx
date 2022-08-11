@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as FacebookIcon } from '../../assets/icon-facebook.svg';
@@ -14,10 +14,20 @@ const Footer = () => {
                 <Logo />
             </Link>
             <nav className='footer__nav'>
-                <Link to='/'>home</Link>
-                <Link to='/headphones'>headphones</Link>
-                <Link to='/speakers'>speakers</Link>
-                <Link to='/earphones'>earphones</Link>
+                <ul>
+                    <NavLink to='/' className={({ isActive }) =>
+                        isActive ? 'active' : undefined
+                    }>home</NavLink>
+                    <NavLink to='/headphones' className={({ isActive }) =>
+                        isActive ? 'active' : undefined
+                    }>headphones</NavLink>
+                    <NavLink to='/speakers' className={({ isActive }) =>
+                        isActive ? 'active' : undefined
+                    }>speakers</NavLink>
+                    <NavLink to='/earphones' className={({ isActive }) =>
+                        isActive ? 'active' : undefined
+                    }>earphones</NavLink>
+                </ul>
             </nav>
             <p className='footer__about'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
             <div className='footer__icons'>

@@ -90,14 +90,16 @@
   }
 
   &__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
 
-    @media only screen and (min-width: 35em) {
-      flex-direction: row;
-      gap: 2.125rem;
+      @media only screen and (min-width: 35em) {
+        flex-direction: row;
+        gap: 2.125rem;
+      }
     }
 
     & a {
@@ -109,8 +111,13 @@
       color: $clr-white;
 
       &:hover,
-      &:active {
+      &:active,
+      &.active {
         color: $clr-orange-dark;
+      }
+
+      &.active {
+        cursor: default;
       }
     }
   }
@@ -130,15 +137,15 @@
     display: flex;
     align-items: flex-end;
     gap: 1rem;
+  }
 
-    & svg {
-      cursor: pointer;
-      fill: $clr-white;
+  & svg {
+    cursor: pointer;
+    fill: $clr-white;
 
-      &:hover,
-      &:active {
-        fill: $clr-orange-dark;
-      }
+    &:hover,
+    &:active {
+      fill: $clr-orange-dark;
     }
   }
 }
