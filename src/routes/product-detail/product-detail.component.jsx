@@ -1,16 +1,14 @@
 import { Fragment } from 'react';
-
-import CategorySection from '../../components/category-section/category-section.component';
-// import LatestSection from '../../components/latest-section/latest-section.component';
-import AboutSection from '../../components/about-section/about-section.component';
+import { useParams } from 'react-router-dom';
 
 import './product-detail.styles.scss';
 
 const ProductDetail = () => {
+    let { productid } = useParams();
+
     return (
         <Fragment>
-            <CategorySection />
-            <AboutSection />
+            <h1>{productid}</h1>
         </Fragment>
     );
 };
