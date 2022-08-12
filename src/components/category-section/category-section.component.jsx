@@ -1,4 +1,4 @@
-import CustomBtn, { ctaType } from '../custom-cta/custom-cta.component';
+import CustomCta, { ctaType } from '../custom-cta/custom-cta.component';
 
 import './category-section.styles.scss';
 
@@ -29,7 +29,7 @@ const CategorySection = () => {
                     <img src={item.image} alt={item.title} />
                     <div>
                         <h6>{item.title}</h6>
-                        <CustomBtn href={item.slug} type={ctaType.LINK}>shop</CustomBtn>
+                        <CustomCta href={item.slug} type={ctaType.LINK}>shop</CustomCta>
                     </div>
                 </div>
             ))}

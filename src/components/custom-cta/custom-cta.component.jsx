@@ -15,7 +15,7 @@ export const ctaTag = {
     LINK: 'link'
 }
 
-const CustomBtn = ({ text, tag, type, href, handleClick, children, ...otherProps }) => {
+const CustomCta = ({ text, tag, type, href, handleClick, children, ...otherProps }) => {
     switch (tag) {
         case ctaTag.BUTTON:
             return (
@@ -32,4 +32,4 @@ const CustomBtn = ({ text, tag, type, href, handleClick, children, ...otherProps
     }
 };
 
-export default CustomBtn;
+export default CustomCta;

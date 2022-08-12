@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import CustomBtn, { ctaType } from '../custom-cta/custom-cta.component';
+import CustomCta, { ctaType } from '../custom-cta/custom-cta.component';
 
 import './hero.styles.scss';
 
@@ -12,7 +12,7 @@ const Hero = () => {
                     <p className='hero__overline'>NEW PRODUCT</p>
                     <h1 className='hero__header'>XX99 Mark II Headphones</h1>
                     <p className='hero__body'>Experience natural, life like audio and exceptional build quality made for the passionate music enthusiast.</p>
-                    <CustomBtn href='/' type={ctaType.PRIMARY}>see product</CustomBtn>
+                    <CustomCta href='/' type={ctaType.PRIMARY}>see product</CustomCta>
                 </div>
             } />
             <Route path='headphones' element={<h1 className='hero__header hero__header--2'>headphones</h1>} />
