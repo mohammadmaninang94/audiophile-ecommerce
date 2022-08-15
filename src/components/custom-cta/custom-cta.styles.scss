@@ -14,82 +14,91 @@
   text-align: center;
   padding-block: 0.9375rem;
   line-height: 1;
-}
 
-.btn__primary {
-  color: $clr-white;
-  background-color: $clr-orange-dark;
-  transition: background-color 0.2s ease-in-out;
-}
+  &--primary {
+    color: $clr-white;
+    background-color: $clr-orange-dark;
+    transition: background-color 0.2s ease-in-out;
+  }
 
-.btn__primary:hover,
-.btn__primary:focus {
-  background-color: $clr-orange-ligth;
-}
+  &--primary:hover,
+  &--primary:focus {
+    background-color: $clr-orange-ligth;
+  }
 
-.btn__secondary {
-  color: $clr-black;
-  background-color: transparent;
-  border: 1px solid $clr-black;
-  transition: all 0.2s ease-in-out;
-}
+  &--secondary {
+    color: $clr-black;
+    background-color: transparent;
+    border: 1px solid $clr-black;
+    transition: all 0.2s ease-in-out;
+  }
 
-.btn__secondary:hover,
-.btn__secondary:focus {
-  color: $clr-white;
-  background-color: $clr-black;
-}
+  &--secondary:hover,
+  &--secondary:focus {
+    color: $clr-white;
+    background-color: $clr-black;
+  }
 
-.btn__tertiary {
-  color: $clr-white;
-  background-color: $clr-black;
-  border: 1px solid $clr-black;
-  transition: all 0.2s ease-in-out;
-}
+  &--tertiary {
+    color: $clr-white;
+    background-color: $clr-black;
+    border: 1px solid $clr-black;
+    transition: all 0.2s ease-in-out;
+  }
 
-.btn__tertiary:hover,
-.btn__tertiary:focus {
-  background-color: hsl(0 0% 30%);
-  border-color: hsl(0 0% 30%);
+  &--tertiary:hover,
+  &--tertiary:focus {
+    background-color: hsl(0 0% 30%);
+    border-color: hsl(0 0% 30%);
+  }
 }
 
 .link {
   @include fw-bold;
   @include fs-200;
   @include uppercase;
+  letter-spacing: 0;
 
   display: inline-block;
   position: relative;
   cursor: pointer;
   text-decoration: none;
   color: hsl(0 0% 0% / 0.5);
-  padding: 1rem 2rem;
-  min-height: 57px;
-  transition: all 0.2s ease-in-out;
+
+  // transition: all 0.2s ease-in-out;
   width: fit-content;
-}
 
-.link::before,
-.link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 0.2em;
-  right: 15px;
-  width: 8px;
-  border: 1px solid $clr-orange-dark;
-}
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-orange-dark;
+    background-color: transparent;
+  }
 
-.link::before {
-  transform: rotate(45deg);
-  top: 1.4rem;
-}
-.link::after {
-  transform: rotate(-45deg);
-  bottom: 1.7rem;
-}
+  &--arrow {
+    @include fs-200;
+    padding: 1rem 2rem;
+    min-height: 57px;
 
-.link:hover,
-.link:active {
-  color: $clr-orange-dark;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 0.2em;
+      right: 15px;
+      width: 8px;
+      border: 1px solid $clr-orange-dark;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 1.4rem;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 1.7rem;
+    }
+  }
+
 }

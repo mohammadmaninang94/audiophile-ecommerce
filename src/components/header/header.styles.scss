@@ -54,6 +54,7 @@
 
     @media only screen and (min-width: 35em) {
       gap: 2.625rem;
+      padding-inline: 2.5rem;
     }
 
     @media only screen and (min-width: 73em) {
@@ -154,10 +155,6 @@
   }
 }
 
-.menu-visible {
-  position: relative;
-}
-
 .mobile-menu {
   height: calc(100% - 91px); // 91px top: value
   width: 100%;
@@ -185,7 +182,6 @@
   }
 
   &.visible {
-    background-color: hsl(0 0% 0% / 0.4);
     visibility: visible;
 
     .category-section {

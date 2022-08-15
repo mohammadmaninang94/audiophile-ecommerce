@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import './custom-cta.styles.scss';
 
 export const ctaType = {
-    PRIMARY: 'btn btn__primary',
-    SECONDARY: 'btn btn__secondary',
-    TERTIARY: 'btn btn__tertiary',
-    LINK: 'link'
+    PRIMARY: 'btn btn--primary',
+    SECONDARY: 'btn btn--secondary',
+    TERTIARY: 'btn btn--tertiary',
+    LINK: 'link',
+    LINK_ARROW: 'link link--arrow'
 };
 
 export const ctaTag = {
@@ -27,7 +28,7 @@ const CustomCta = ({ text, tag, type, href, handleClick, children, ...otherProps
             );
         default:
             return (
-                <Link to={href} className={type}>{children}</Link>
+                <Link to={href} className={type} onClick={handleClick}>{children}</Link>
             );
     }
 };

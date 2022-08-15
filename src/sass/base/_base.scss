@@ -83,6 +83,10 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+#root {
+  position: relative;
+}
+
 main {
   padding-inline: 1.5rem;
 

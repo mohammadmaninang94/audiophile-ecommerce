@@ -1,8 +1,10 @@
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useContext } from 'react';
+
+import { AppContext } from '../../contexts/app.context';
 
 import Hero from '../../components/hero/hero.component';
-import CategorySection from '../category-section/category-section.component';
+
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as CartIcon } from '../../assets/icon-cart.svg';
 
@@ -12,7 +14,7 @@ import './header.styles.scss';
 
 
 const Header = () => {
-    const [menuHidden, setMenuHidden] = useState(true);
+    const { toggleMenu, toggleCart } = useContext(AppContext);
     const location = useLocation();
     let headerClassName = '';
 
@@ -29,15 +31,11 @@ const Header = () => {
             break;
     }
 
-    useEffect(() => {
-        document.body.classList.toggle('menu-visible');
-    }, [menuHidden]);
-
     return (
         <Fragment>
             <header className={`header ${headerClassName}`}>
                 <div className="header__primary">
-                    <button type="button" className='header__mobile-btn' onClick={() => setMenuHidden(!menuHidden)}><span>Menu</span></button>
+                    <button type="button" className='header__mobile-btn' onClick={toggleMenu}><span>Menu</span></button>
                     <Link className='header__logo' to='/'>
                         <Logo />
                     </Link>
@@ -57,11 +55,10 @@ const Header = () => {
                             }>earphones</NavLink>
                         </ul>
                     </nav>
-                    <CartIcon />
+                    <CartIcon onClick={toggleCart} />
                 </div>
                 <Hero />
             </header>
-            <div className={`mobile-menu ${menuHidden ? '' : 'visible'}`}><CategorySection /></div>
         </Fragment>
     )
 };
