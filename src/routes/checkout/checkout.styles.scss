@@ -16,7 +16,7 @@
   border-radius: 8px;
   padding: 1.5rem;
   margin-top: 1.5rem;
-//   width: 65.64748201438849%;
+  //   width: 65.64748201438849%;
 
   @media only screen and (min-width: 35em) {
     padding-block: 1.625rem;
@@ -121,6 +121,8 @@ fieldset {
 }
 
 .e-money {
-  display: flex;
-  gap: 1rem;
+  @media only screen and (min-width: 35em) {
+    display: flex;
+    gap: 1rem;
+  }
 }
