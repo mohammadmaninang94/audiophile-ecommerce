@@ -14,7 +14,7 @@ export const ctaTag = {
     DEFAULT: 'default',
     BUTTON: 'button',
     LINK: 'link'
-}
+};
 
 const CustomCta = ({ text, tag, type, href, handleClick, children, ...otherProps }) => {
     switch (tag) {

@@ -1,9 +1,15 @@
+import { useContext } from 'react';
+
+import { AppContext } from '../../contexts/app.context';
+
 import CustomCta, { ctaTag, ctaType } from '../custom-cta/custom-cta.component';
 import QuantityBtn from '../quantity-btn/quantity-btn.component';
 
 import './cart-box.styles.scss';
 
 const CartBox = () => {
+    const { toggleCart } = useContext(AppContext);
+
     return (
         <div className='cart-box'>
             <div className='cart-box__header'>
@@ -41,7 +47,7 @@ const CartBox = () => {
                     <span>Total</span>
                     <strong>$ 5,396</strong>
                 </div>
-                <CustomCta type={ctaType.PRIMARY} href='checkout'>checkout</CustomCta>
+                <CustomCta type={ctaType.PRIMARY} href='checkout' handleClick={toggleCart}>checkout</CustomCta>
             </div>
 
         </div>

@@ -1,0 +1,53 @@
+@use "../../sass/abstracts" as *;
+
+.input-box {
+  position: relative;
+  @include fw-bold;
+  width: 100%;
+
+  & input {
+    @include fs-300;
+    @include bg-white;
+    caret-color: $clr-orange-ligth;
+
+    letter-spacing: -0.25px;
+    padding: 1.125rem 1.1875rem 1.2rem 1.1875rem;
+    border: 1px solid hsla(0, 0%, 81%, 1);
+    border-radius: 8px;
+    // width: 100%;
+  }
+
+  &__label,
+  &__error {
+    position: absolute;
+    @include fs-200;
+    top: -24px;
+    letter-spacing: -0.21px;
+  }
+
+  &__label {
+    left: 0;
+  }
+
+  &__error {
+    right: 0;
+  }
+
+  & input:focus {
+    outline: transparent;
+    border-width: 2px;
+    border-color: $clr-orange-ligth;
+  }
+
+  & input:focus:invalid + &__label,
+  & input:invalid ~ &__error,
+  & input:focus:invalid ~ &__error,
+  &--error &__label {
+    color: hsl(0 65% 49%);
+  }
+
+  & input:focus:invalid,
+  &--error input {
+    border-color: hsl(0 65% 49%);
+  }
+}
