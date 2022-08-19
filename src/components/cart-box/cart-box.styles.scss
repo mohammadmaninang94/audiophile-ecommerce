@@ -90,7 +90,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      @include uppercase;
+      
       & span {
         @include fw-medium;
         color: $clr-black-50;
@@ -99,7 +100,6 @@
       & strong {
         @include fs-500;
         @include fw-bold;
-        @include uppercase;
         letter-spacing: 0;
       }
     }

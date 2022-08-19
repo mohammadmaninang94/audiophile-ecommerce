@@ -14,7 +14,7 @@ const CartBox = () => {
         <div className='cart-box'>
             <div className='cart-box__header'>
                 <h6>cart (3)</h6>
-                <CustomCta type={ctaType.LINK} tag={ctaTag.LINK}>Remove all</CustomCta>
+                <CustomCta ctaType={ctaType.LINK} tag={ctaTag.LINK}>Remove all</CustomCta>
             </div>
             <div className='cart-box__body'>
                 <div className='cart-box__item'>
@@ -47,7 +47,7 @@ const CartBox = () => {
                     <span>Total</span>
                     <strong>$ 5,396</strong>
                 </div>
-                <CustomCta type={ctaType.PRIMARY} href='checkout' handleClick={toggleCart}>checkout</CustomCta>
+                <CustomCta ctaType={ctaType.PRIMARY} href='checkout' handleClick={toggleCart}>checkout</CustomCta>
             </div>
 
         </div>
