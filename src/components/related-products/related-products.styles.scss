@@ -2,6 +2,7 @@
 
 .related-products {
   text-align: center;
+  padding-bottom: 2rem;
 
   & h2 {
     @include fs-500;
@@ -15,6 +16,13 @@
     @include fw-bold;
     @include uppercase;
     padding: 1rem 0;
+  }
+
+  & picture {
+
+    & img {
+      border-radius: .5rem;
+    }
   }
 
   & a {
