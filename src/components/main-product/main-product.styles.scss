@@ -24,4 +24,42 @@
   & h3 {
     @include fw-bold;
   }
+
+  & .wrapper{
+    width: 300px;
+    
+    
+    
+
+    & .cart-add {
+      width: calc(150px * 2);
+      
+      overflow: hidden;
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+      
+
+      & .quantity-btn{
+        float: left;
+        
+        height: 100%;
+        margin-right: 1rem;
+       
+      }
+
+      & .btn--primary {
+        float: left;
+        height: 33px;
+        padding-top: 10px;
+      }
+    }
+  }
 }
+
+/*
+height: 90px;
+overflow-x: auto;
+background-color: yellow;
+
+
+*/

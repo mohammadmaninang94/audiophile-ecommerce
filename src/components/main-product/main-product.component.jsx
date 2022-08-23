@@ -1,6 +1,7 @@
 import './main-product.styles.scss';
 
 import CustomBtn, { ctaType } from '../custom-cta/custom-cta.component';
+import QuantityBtn from '../quantity-btn/quantity-btn.component';
 
 const MainProduct = () => {
     return (
@@ -15,7 +16,12 @@ const MainProduct = () => {
             <h1>XX99 MARK II HEADPHONES</h1>
             <p>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
             <h3>$ 2,999</h3>
-            <CustomBtn href='/' type={ctaType.PRIMARY}>add to cart</CustomBtn>
+            <div className="wrapper">
+                <div className="cart-add">
+                    <QuantityBtn quantity={1} />
+                    <CustomBtn href='/' type={ctaType.PRIMARY}>add to cart</CustomBtn>
+                </div>
+            </div>
         </section>
     );
 };
