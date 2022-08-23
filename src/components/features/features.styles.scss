@@ -1,0 +1,24 @@
+@use "../../sass/abstracts" as *;
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  & h2 {
+    @include fs-600;
+    @include fw-bold;
+    @include uppercase;
+    padding: 1rem 0;
+  }
+
+  & p {
+    color: $clr-black-50;
+    padding-bottom: .5rem;
+
+    & span {
+        color: $clr-orange-dark;
+        padding-right: 1.5rem;
+    }
+  }
+}

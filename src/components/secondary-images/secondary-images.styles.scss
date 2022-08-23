@@ -1,0 +1,13 @@
+@use "../../sass/abstracts" as *;
+
+.secondary-images {
+  margin: 5rem 0;
+
+  & picture {
+  	padding: .5rem 0;
+
+		& img {
+			border-radius: .5rem;
+		}
+  }
+}

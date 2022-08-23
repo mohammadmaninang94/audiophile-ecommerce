@@ -1,0 +1,27 @@
+@use "../../sass/abstracts" as *;
+
+.main-product {
+
+  & img {
+    border-radius: .5rem;
+  }
+
+  & h1 {
+    @include fw-bold;
+    @include fs-900;
+  }
+
+  & p {
+    padding: 1.5rem 0;
+    color: $clr-black-50;
+
+    & span {
+        color: $clr-orange-dark;
+        letter-spacing: .5rem;
+    }
+  }
+
+  & h3 {
+    @include fw-bold;
+  }
+}
