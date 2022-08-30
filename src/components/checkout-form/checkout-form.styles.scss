@@ -57,8 +57,7 @@
 
   &__payment-method {
     row-gap: 1rem !important;
-    column-gap: 1rem;
-    margin-bottom: 3.5rem;
+    column-gap: 1rem;   
 
     @media only screen and (min-width: 35em) {
       grid-template-columns: repeat(2, 1fr);
@@ -113,6 +112,8 @@
   }
 
   .e-money {
+    margin-top: 3.5rem;
+
     @media only screen and (min-width: 35em) {
       display: flex;
       gap: 1rem;

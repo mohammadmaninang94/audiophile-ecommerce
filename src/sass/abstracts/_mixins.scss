@@ -79,7 +79,12 @@
 }
 @mixin fs-700 {
   font-size: $fs-700;
-  letter-spacing: 2px;
+  letter-spacing: 0.030714285em; 
+  line-height: 1;
+  
+  @media only screen and (min-width: 35em) {
+    letter-spacing: 2px;
+  }
 }
 @mixin fs-600 {
   font-size: $fs-600;

@@ -13,7 +13,6 @@
   text-decoration: none;
   text-align: center;
   padding-block: 0.9375rem;
-  line-height: 1;
 
   &--primary {
     color: $clr-white;
@@ -100,5 +99,8 @@
       bottom: 0.4rem;
     }
   }
+}
 
+button.link {
+  border: none;
 }

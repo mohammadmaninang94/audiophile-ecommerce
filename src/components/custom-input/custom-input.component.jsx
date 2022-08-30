@@ -5,7 +5,7 @@ const CustomInput = ({ id, text, ...otherPorps }) => {
         <div className="input-box">
             <input id={id}  {...otherPorps} />
             <label htmlFor={id} className="input-box__label">{text}</label>
-            <span className="input-box__error">Wrong format</span>
+            <span className="input-box__error"></span>
         </div>
     );
 };

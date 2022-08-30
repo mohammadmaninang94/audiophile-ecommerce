@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import CustomInput from '../custom-input/custom-input.component';
 import RadioBtn from '../radio-btn/radio-btn.component';
 import SummaryBox from '../summary-box/summary-box.component';
@@ -5,6 +6,14 @@ import SummaryBox from '../summary-box/summary-box.component';
 import './checkout-form.styles.scss';
 
 const CheckoutForm = () => {
+    const [isCOD, setCOD] = useState(false);
+    const [isEMoney, setEMoney] = useState(true);
+
+    const paymentHandler = (e) => {
+        setEMoney(!isEMoney);
+        setCOD(!isCOD);
+    };
+
     return (
         <form className='checkout-form'>
             <section className='checkout-form__wrapper'>
@@ -65,23 +74,25 @@ const CheckoutForm = () => {
                     <legend className='checkout-form__payment-title'>payment details</legend>
                     <div className='checkout-form__payment-method'>
                         <strong>Payment Method</strong>
-                        <RadioBtn name='paymenttype' value='e-money' text='e-Money' defaultChecked />
-                        <RadioBtn name='paymenttype' value='cod' text='Cash on Delivery' />
+                        <RadioBtn name='paymenttype' value='e-money' text='e-Money' onChange={paymentHandler} defaultChecked={isEMoney} />
+                        <RadioBtn name='paymenttype' value='cod' text='Cash on Delivery' onChange={paymentHandler} defaultChecked={isCOD} />
                     </div>
-                    <div className='e-money'>
-                        <CustomInput id='emoney-number'
-                            text='e-Money Number'
-                            type='text'
-                            placeholder='Insert your e-Money Number'
-                            required
-                        />
-                        <CustomInput id='emoney-pin'
-                            text='e-Money PIN'
-                            type='text'
-                            placeholder='Insert your e-Money PIN'
-                            required
-                        />
-                    </div>
+                    {isEMoney ?
+                        (<div className='e-money'>
+                            <CustomInput id='emoney-number'
+                                text='e-Money Number'
+                                type='text'
+                                placeholder='Insert your e-Money Number'
+                                required
+                            />
+                            <CustomInput id='emoney-pin'
+                                text='e-Money PIN'
+                                type='text'
+                                placeholder='Insert your e-Money PIN'
+                                required
+                            />
+                        </div>)
+                        : null}
                 </fieldset>
                 <div className='checkout-form__cod-info'>
                     <img src='/images/checkout/icon-cash-on-delivery.svg' alt='COD icon' />

@@ -8,10 +8,12 @@ $clr-gray-ligther: hsl(0 0% 95%);
 $clr-gray-dark: hsl(0 0% 6%);
 
 $clr-white: hsl(0 0% 100%);
+$clr-white-50: hsl(0 0% 100%/ 0.50);
 $clr-white-75: hsl(0 0% 100%/ 0.75);
 $clr-black: hsl(0 0% 0%);
 $clr-black-50: hsl(0 0% 0%/ 0.5);
 $clr-black-25: hsl(0 0% 0%/ 0.25);
+$clr-black-08: hsl(0 0% 0%/ 0.08);
 
 //  font-sizes
 $fs-1000: clamp(2.25rem, 5.3vw + 1rem, 3.5rem); //  58px

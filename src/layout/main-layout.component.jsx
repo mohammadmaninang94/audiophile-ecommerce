@@ -7,12 +7,13 @@ import Header from '../components/header/header.component';
 import Footer from '../components/footer/footer.component';
 import CartBox from '../components/cart-box/cart-box.component';
 import CategorySection from '../components/category-section/category-section.component';
+import CheckoutModal from '../components/checkout-modal/checkout-modal.component';
 
 import routes from '../routes/routes';
 
 
 const MainLayout = () => {
-    const { menuHidden, cartHidden } = useContext(AppContext);
+    const { menuHidden, cartHidden, checkoutModalHidden } = useContext(AppContext);
     const location = useLocation();
     let mainClassName = '';
 
@@ -32,7 +33,10 @@ const MainLayout = () => {
             </main>
             <Footer />
             <div className={`mobile-menu ${menuHidden ? '' : 'visible'}`}><CategorySection /></div>
-            <div className={`cart ${cartHidden ? '' : 'visible'}`}><CartBox /></div>
+            {location.pathname !== routes.CHECKOUT ?
+                <div className={`cart ${cartHidden ? '' : 'visible'}`}><CartBox /></div>
+                : ( checkoutModalHidden ? null : <CheckoutModal />)
+            }
         </Fragment>
     );
 };

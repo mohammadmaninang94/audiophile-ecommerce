@@ -1,8 +1,15 @@
+import { useContext } from 'react';
+
 import CustomCta, { ctaTag, ctaType } from '../custom-cta/custom-cta.component';
+
+import { AppContext } from '../../contexts/app.context';
 
 import './summary-box.styles.scss';
 
+
 const SummaryBox = () => {
+    const { toggleCheckoutModal } = useContext(AppContext);
+
     return (
         <section className='summary-box'>
             <div className='summary-box__header'>
@@ -53,7 +60,7 @@ const SummaryBox = () => {
                     <span>grand total</span>
                     <strong>$ 5,446</strong>
                 </div>
-                <CustomCta ctaType={ctaType.PRIMARY} tag={ctaTag.BUTTON} href='checkout' type='submit'>checkout</CustomCta>
+                <CustomCta ctaType={ctaType.PRIMARY} tag={ctaTag.BUTTON} type='submit' onClick={toggleCheckoutModal}>checkout</CustomCta>
             </div>
         </section>
     );
