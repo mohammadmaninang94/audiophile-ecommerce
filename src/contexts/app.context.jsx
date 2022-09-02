@@ -2,7 +2,11 @@ import { useState, createContext } from 'react';
 
 export const AppContext = createContext({
     menuHidden: true,
-    setMenuHidden: () => null
+    toggleMenu: () => null,
+    cartHidden: true,
+    toggleCart: () => null,
+    checkoutModalHidden: true,
+    toggleCheckoutModal: () => null,
 });
 
 export const AppProvider = ({ children }) => {

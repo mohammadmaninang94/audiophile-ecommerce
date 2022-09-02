@@ -3,12 +3,18 @@ import { useContext } from 'react';
 import CustomCta, { ctaTag, ctaType } from '../custom-cta/custom-cta.component';
 
 import { AppContext } from '../../contexts/app.context';
+import { CartContext } from '../../contexts/cart.context';
 
 import './summary-box.styles.scss';
 
 
 const SummaryBox = () => {
     const { toggleCheckoutModal } = useContext(AppContext);
+    const { items, itemsTotal } = useContext(CartContext);
+    const shippingCost = 50;
+    const vat = 0.19;
+    const vatTotal = parseInt((itemsTotal + shippingCost) * vat);
+    const grandTotal = itemsTotal + shippingCost + vatTotal;
 
     return (
         <section className='summary-box'>
@@ -16,49 +22,38 @@ const SummaryBox = () => {
                 <h6>summary</h6>
             </div>
             <div className='summary-box__body'>
-                <div className='summary-box__item'>
-                    <img src='/images/cart/image-xx99-mark-two-headphones.jpg' alt='XX99 MK II' />
-                    <div>
-                        <strong>XX99 MK II</strong>
-                        <span>$2,999</span>
-                    </div>
-                    <span className='summary-box__item-qty'>x1</span>
-                </div>
-                <div className='summary-box__item'>
-                    <img src='/images/cart/image-xx59-headphones.jpg' alt='XX59' />
-                    <div>
-                        <strong>XX59</strong>
-                        <span>$899</span>
-                    </div>
-                    <span className='summary-box__item-qty'>x2</span>
-                </div>
-                <div className='summary-box__item'>
-                    <img src='/images/cart/image-yx1-earphones.jpg' alt='YX1' />
-                    <div>
-                        <strong>YX1</strong>
-                        <span>$599</span>
-                    </div>
-                    <span className='summary-box__item-qty'>x1</span>
-                </div>
+                {items.map((item) => {
+                    const { id, name, price, quantity, thumbnailImage } = item;
+                    return (
+                        <div key={id} className='summary-box__item'>
+                            <img src={thumbnailImage} alt={name} />
+                            <div>
+                                <strong>{name}</strong>
+                                <span>$ {price.toLocaleString('en-US')}</span>
+                            </div>
+                            <span className='summary-box__item-qty'>x{quantity}</span>
+                        </div>
+                    )
+                })}
             </div>
             <div className='summary-box__footer'>
                 <div>
                     <div className='summary-box__total'>
                         <span>Total</span>
-                        <strong>$ 5,396</strong>
+                        <strong>$ {itemsTotal.toLocaleString('en-US')}</strong>
                     </div>
                     <div className='summary-box__total'>
                         <span>Shipping</span>
-                        <strong>$ 50</strong>
+                        <strong>$ {shippingCost.toLocaleString('en-US')}</strong>
                     </div>
                     <div className='summary-box__total'>
                         <span>vat (included)</span>
-                        <strong>$ 1,079</strong>
+                        <strong>$ {vatTotal.toLocaleString('en-US')}</strong>
                     </div>
                 </div>
                 <div className='summary-box__grand-total'>
                     <span>grand total</span>
-                    <strong>$ 5,446</strong>
+                    <strong>$ {grandTotal.toLocaleString('en-US')}</strong>
                 </div>
                 <CustomCta ctaType={ctaType.PRIMARY} tag={ctaTag.BUTTON} type='submit' onClick={toggleCheckoutModal}>checkout</CustomCta>
             </div>
