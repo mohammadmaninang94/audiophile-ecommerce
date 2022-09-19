@@ -13,7 +13,6 @@
   text-decoration: none;
   text-align: center;
   padding-block: 0.9375rem;
-  line-height: 1;
 
   &--primary {
     color: $clr-white;
@@ -77,8 +76,8 @@
 
   &--arrow {
     @include fs-200;
-    padding: 1rem 2rem;
-    min-height: 57px;
+    padding: 0 2rem;
+    // min-height: 57px;
 
     &::before,
     &::after {
@@ -93,12 +92,15 @@
 
     &::before {
       transform: rotate(45deg);
-      top: 1.4rem;
+      top: 0.4rem;
     }
     &::after {
       transform: rotate(-45deg);
-      bottom: 1.7rem;
+      bottom: 0.4rem;
     }
   }
+}
 
+button.link {
+  border: none;
 }

@@ -14,21 +14,21 @@ export const ctaTag = {
     DEFAULT: 'default',
     BUTTON: 'button',
     LINK: 'link'
-}
+};
 
-const CustomCta = ({ text, tag, type, href, handleClick, children, ...otherProps }) => {
+const CustomCta = ({ tag, ctaType, href, handleClick, children, ...otherProps }) => {
     switch (tag) {
         case ctaTag.BUTTON:
             return (
-                <button className={type} onClick={handleClick} {...otherProps}>{children}</button>
+                <button className={ctaType} onClick={handleClick} {...otherProps}>{children}</button>
             );
         case ctaTag.LINK:
             return (
-                <a href={href} className={type} onClick={handleClick} {...otherProps}>{children}</a>
+                <a href={href} className={ctaType} onClick={handleClick} {...otherProps}>{children}</a>
             );
         default:
             return (
-                <Link to={href} className={type} onClick={handleClick}>{children}</Link>
+                <Link to={href} className={ctaType} onClick={handleClick}>{children}</Link>
             );
     }
 };

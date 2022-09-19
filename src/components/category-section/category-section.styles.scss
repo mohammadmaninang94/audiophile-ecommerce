@@ -24,7 +24,7 @@
     width: 100%;
 
     display: grid;
-    grid-template-rows: 1fr 75%;
+    grid-template-rows: 1fr 76%;
 
     &::before {
       content: "";
@@ -37,9 +37,15 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
+      gap: 1rem;
 
       background-color: $clr-gray-ligther;
       border-radius: 8px;
+      padding-bottom: 1.375rem;
+
+      @media only screen and (min-width: 73em) {
+        padding-bottom: 1.875rem;
+      }
     }
 
     & img {
@@ -52,9 +58,9 @@
         width: 9.6875rem;
       }
 
-      @media only screen and (min-width: 64em) { 
+      @media only screen and (min-width: 64em) {
         top: -10px;
-        width: 55%; // maybe we can use vw
+        width: 50%;
       }
 
       @media only screen and (min-width: 73em) {

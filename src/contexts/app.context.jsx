@@ -2,12 +2,17 @@ import { useState, createContext } from 'react';
 
 export const AppContext = createContext({
     menuHidden: true,
-    setMenuHidden: () => null
+    toggleMenu: () => null,
+    cartHidden: true,
+    toggleCart: () => null,
+    checkoutModalHidden: true,
+    toggleCheckoutModal: () => null,
 });
 
 export const AppProvider = ({ children }) => {
     const [menuHidden, setMenuHidden] = useState(true);
     const [cartHidden, setCartHidden] = useState(true);
+    const [checkoutModalHidden, setCheckoutModalHidden] = useState(true);
 
     const toggleMenu = () => {
         if (!cartHidden) {
@@ -23,7 +28,11 @@ export const AppProvider = ({ children }) => {
         setCartHidden(!cartHidden);
     };
 
-    const value = { menuHidden, toggleMenu, cartHidden, toggleCart };
+    const toggleCheckoutModal = () => {
+        setCheckoutModalHidden(!checkoutModalHidden);
+    };
+
+    const value = { menuHidden, toggleMenu, cartHidden, toggleCart, checkoutModalHidden, toggleCheckoutModal };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

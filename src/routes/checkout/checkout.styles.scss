@@ -1,0 +1,14 @@
+@use "../../sass/abstracts" as *;
+
+.main--checkout {
+  @include bg-gray-ligther;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+
+  @media only screen and (min-width: 35em) {
+    padding-top: 3rem;
+    padding-bottom: 7.25rem;
+  }
+}
+
+

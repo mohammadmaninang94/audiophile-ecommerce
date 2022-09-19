@@ -27,7 +27,13 @@ const categoryItems = [
 
 const CategorySection = () => {
 
-    const { toggleMenu } = useContext(AppContext);
+    const { menuHidden, toggleMenu } = useContext(AppContext);
+
+    const handleClick = () => {
+        if (!menuHidden) {
+            toggleMenu();
+        }
+    };
 
     return (
         <section className='category-section'>
@@ -36,7 +42,7 @@ const CategorySection = () => {
                     <img src={item.image} alt={item.title} />
                     <div>
                         <h6>{item.title}</h6>
-                        <CustomCta href={item.slug} type={ctaType.LINK_ARROW} handleClick={toggleMenu}>shop</CustomCta>
+                        <CustomCta href={item.slug} ctaType={ctaType.LINK_ARROW} handleClick={handleClick}>shop</CustomCta>
                     </div>
                 </div>
             ))}

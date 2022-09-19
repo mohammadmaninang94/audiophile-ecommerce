@@ -1,0 +1,119 @@
+@use "../../sass/abstracts" as *;
+
+.summary-box {
+  min-width: 20.4375rem;
+  width: 100%;
+  border-radius: 8px;
+  @include bg-white;
+  padding: 2rem 1.75rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: fit-content;
+
+  @media only screen and (min-width: 35em) {
+    padding: 2rem;
+  }
+
+  @media only screen and (min-width: 73em) {
+    max-width: 21.875rem;
+  }
+
+  & h6 {
+    @include fs-500;
+    @include fw-bold;
+    @include uppercase;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  &__total,
+  &__grand-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include uppercase;
+
+    & span {
+      @include fw-medium;
+      color: $clr-black-50;
+    }
+
+    & strong {
+      @include fs-500;
+      @include fw-bold;
+      letter-spacing: 0;
+    }
+  }
+
+  &__grand-total {
+    strong {
+      color: $clr-orange-dark;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    & img {
+      width: 64px;
+      border-radius: 8px;
+    }
+
+    & div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      flex-grow: 1;
+      margin-left: 1rem;
+
+      & strong {
+        @include fs-400;
+        @include fw-bold;
+        @include uppercase;
+        letter-spacing: 0;
+      }
+
+      & span {
+        @include fs-300;
+        @include fw-bold;
+        @include uppercase;
+        letter-spacing: 0;
+        color: $clr-black-50;
+      }
+    }
+  }
+
+  &__item-qty {
+    @include fs-300;
+    @include fw-bold;
+    letter-spacing: 0;
+    color: $clr-black-50;
+  }
+
+  & .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
