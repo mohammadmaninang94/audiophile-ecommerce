@@ -12,7 +12,7 @@ const ProductDetail = () => {
     // let { productid } = useParams();
 
     return (
-        <Fragment className="product-detail">
+        <Fragment>
             {/*<h1>{productid}</h1>*/}
             <CustomCta type={ctaType.LINK} tag={ctaTag.LINK} id="go-back">Go Back</CustomCta>
             <MainProduct />

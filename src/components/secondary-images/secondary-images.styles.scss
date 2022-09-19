@@ -1,13 +1,15 @@
 @use "../../sass/abstracts" as *;
 
 .secondary-images {
-  margin: 5rem 0;
+  margin-bottom: 7.5rem;
 
-  & picture {
-  	padding: .5rem 0;
+  & .pics {
+  	display: flex;
+  	flex-direction: column;
+  	gap: 1.5rem;
+  }
 
-		& img {
+  & img {
 			border-radius: .5rem;
 		}
-  }
 }
