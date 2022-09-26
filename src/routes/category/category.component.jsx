@@ -9,7 +9,7 @@ const Category = ({ title }) => {
     return (
         <Fragment>
             <h1>{title} Category</h1>
-            <Link to={`${location.pathname}/item1`}>item1</Link>
+            <Link to={`${location.pathname}/xx99-mark-two-headphones`}>item1</Link>
             <Link to={`${location.pathname}/item2`}>item2</Link>
             <Link to={`${location.pathname}/item3`}>item3</Link>
         </Fragment>
