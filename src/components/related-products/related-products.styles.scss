@@ -1,0 +1,44 @@
+@use "../../sass/abstracts" as *;
+
+.related-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 7.5rem;
+
+  & .related-products-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  & .single-related-product {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  & h2 {
+    @include fs-600;
+    @include fw-bold;
+    @include uppercase;
+    letter-spacing: 0.05375rem;
+  }
+
+  & h3 {
+    @include fs-600;
+    @include fw-bold;
+    @include uppercase;
+    letter-spacing: 0.106875rem;
+  }
+
+  & picture {
+
+    & img {
+      border-radius: .5rem;
+    }
+  }
+
+}

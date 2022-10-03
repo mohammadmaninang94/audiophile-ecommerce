@@ -1,0 +1,52 @@
+@use "../../sass/abstracts" as *;
+
+.main-product {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 5.5rem;
+
+  & img {
+    border-radius: .5rem;
+  }
+
+  & h1 {
+    @include fw-bold;
+    @include fs-700;
+    letter-spacing: 1px;
+  }
+
+  & p {
+    color: $clr-black-50;
+
+    & span {
+        color: $clr-orange-dark;
+        @include fw-regular;
+        @include fs-300;
+
+    }
+  }
+
+  & .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  & h3 {
+    @include fw-bold;
+    @include fs-500;
+  }
+    
+  & .cart-add {
+    display: grid;
+    grid-template-columns: 120px 160px;
+    column-gap: 16px;
+
+    & .quantity-btn{
+      height: 100%;
+      max-width: 9rem;
+      padding-top: 15px;
+    }
+  }
+}

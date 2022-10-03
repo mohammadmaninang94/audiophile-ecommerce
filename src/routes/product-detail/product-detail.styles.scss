@@ -1,7 +1,9 @@
-.category-section {
-    margin-top: 2.5rem;
+@use "../../sass/abstracts" as *;
 
-    @media only screen and (min-width: 35em) {
-        margin-top: 6rem;
-    }
+#go-back {
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+	text-transform: none;
+	font-size: 15px;
+	@include fw-medium;
 }

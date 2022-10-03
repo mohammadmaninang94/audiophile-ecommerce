@@ -6,6 +6,7 @@ import App from './App';
 
 import { AppProvider } from './contexts/app.context';
 import { CartProvider } from './contexts/cart.context';
+import { ProductsProvider } from './contexts/products.context.jsx'
 
 import './sass/main.scss';
 
@@ -17,7 +18,9 @@ root.render(
     <BrowserRouter>
       <AppProvider>
         <CartProvider>
-          <App />
+          <ProductsProvider>
+            <App />
+          </ProductsProvider>
         </CartProvider>
       </AppProvider>
     </BrowserRouter>

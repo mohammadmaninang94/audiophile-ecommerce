@@ -1,0 +1,15 @@
+@use "../../sass/abstracts" as *;
+
+.secondary-images {
+  margin-bottom: 7.5rem;
+
+  & .pics {
+  	display: flex;
+  	flex-direction: column;
+  	gap: 1.5rem;
+  }
+
+  & img {
+			border-radius: .5rem;
+		}
+}
