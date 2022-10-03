@@ -1,6 +1,7 @@
 import { Fragment, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProductsContext } from '../../contexts/products.context';
+import { CartContext } from '../../contexts/cart.context';
 import './product-detail.styles.scss';
 
 import CustomCta, { ctaTag, ctaType } from '../../components/custom-cta/custom-cta.component';
@@ -11,6 +12,7 @@ import RelatedProducts from '../../components/related-products/related-products.
 
 const ProductDetail = () => {
     const { products, productLookup, productLookupRelated } = useContext(ProductsContext);
+    const { extractItem } = useContext(CartContext);
     const { productid } = useParams();
     const product = productLookup(products, productid);
     const navigate = useNavigate();
@@ -25,6 +27,7 @@ const ProductDetail = () => {
                 description={product.description}
                 price={product.price}
                 slug={product.slug}
+                item={extractItem(product)}
             />
             <Features
                 features={product.features}

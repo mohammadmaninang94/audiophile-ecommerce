@@ -3,17 +3,17 @@ import { createContext, useState, useEffect } from "react";
 const findExistingItem = (items, itemToAdd) =>
     items.find(item => item.id === itemToAdd.id);
 
-const addItemToCart = (items, itemToAdd) => {
+const addItemToCart = (items, itemToAdd, quantityToAdd) => {
     const existingItem = findExistingItem(items, itemToAdd);
-
+    const quantity = quantityToAdd ? quantityToAdd : 1;
     if (existingItem) {
         return items.map(item =>
             item.id === existingItem.id ?
-                ({ ...item, quantity: item.quantity + 1 }) : item
+                ({ ...item, quantity: item.quantity + quantity }) : item
         );
     };
 
-    return [...items, { ...itemToAdd, quantity: 1 }];
+    return [...items, { ...itemToAdd, quantity: quantity }];
 };
 
 const removeItemFromCart = (items, itemToRemove) => {
@@ -72,13 +72,13 @@ export const CartProvider = ({ children }) => {
         setItemsTotal(newTotal)
     }, [items]);
 
-    const addItem = (item) => setItems(addItemToCart(items, item));
+    const addItem = (item, quantity) => setItems(addItemToCart(items, item, quantity));
     const removeItem = (item) => setItems(removeItemFromCart(items, item));
 
-    const extractItem = ({ id, name, price }) => {
-        return { id, name, price };
-    }
-    
+    const extractItem = ({ id, name, price, thumbnailImage }) => {
+        return { id, name, price, thumbnailImage, quantity: 1 };
+    };
+
     const removeAllItems = () => setItems([]);
 
     const value = { items, itemsCount, itemsTotal, addItem, removeItem, extractItem, removeAllItems };
