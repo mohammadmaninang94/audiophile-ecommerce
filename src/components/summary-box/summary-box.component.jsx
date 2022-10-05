@@ -11,10 +11,15 @@ import './summary-box.styles.scss';
 const SummaryBox = () => {
     const { toggleCheckoutModal } = useContext(AppContext);
     const { items, itemsTotal } = useContext(CartContext);
+
     const shippingCost = 50;
     const vat = 0.19;
     const vatTotal = parseInt((itemsTotal + shippingCost) * vat);
     const grandTotal = itemsTotal + shippingCost + vatTotal;
+
+    const checkoutHandler = () => {
+        toggleCheckoutModal();
+    };
 
     return (
         <section className='summary-box'>
@@ -55,7 +60,7 @@ const SummaryBox = () => {
                     <span>grand total</span>
                     <strong>$ {grandTotal.toLocaleString('en-US')}</strong>
                 </div>
-                <CustomCta ctaType={ctaType.PRIMARY} tag={ctaTag.BUTTON} type='submit' onClick={toggleCheckoutModal}>checkout</CustomCta>
+                <CustomCta ctaType={ctaType.PRIMARY} tag={ctaTag.BUTTON} type='submit' onClick={checkoutHandler}>checkout</CustomCta>
             </div>
         </section>
     );

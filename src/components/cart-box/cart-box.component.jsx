@@ -10,7 +10,7 @@ import './cart-box.styles.scss';
 
 const CartBox = () => {
     const { toggleCart } = useContext(AppContext);
-    const { items, itemsCount, itemsTotal, removeAllItems } = useContext(CartContext);
+    const { items, itemsCount, itemsTotal, removeAllItems, addItem, removeItem } = useContext(CartContext);
     
     return (
         <div className='cart-box'>
@@ -21,6 +21,8 @@ const CartBox = () => {
             <div className='cart-box__body'>
                 {items.map((item) => {
                     const { id, name, price, thumbnailImage } = item;
+                    const addItemHandler = () => addItem(item);
+                    const removeItemHandler = () => removeItem(item);
                     return (
                         <div key={id} className='cart-box__item'>
                             <img src={thumbnailImage} alt={name} />
@@ -28,7 +30,7 @@ const CartBox = () => {
                                 <strong>{name}</strong>
                                 <span>$ {price.toLocaleString('en-US')}</span>
                             </div>
-                            <QuantityBtn item={item} />
+                            <QuantityBtn quantity={item.quantity} addHandler={addItemHandler} removeHandler={removeItemHandler}/>
                         </div>
                     )
                 })}
