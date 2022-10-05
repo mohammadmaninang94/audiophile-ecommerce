@@ -6,16 +6,35 @@
   gap: 5.5rem;
   margin-bottom: 5.5rem;
 
+  @media only screen and (min-width: 62.5em) {
+    flex-direction: row;
+    gap: 7.8125rem;
+  }
+
   & .features-top {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    @media only screen and (min-width: 62.5em) {
+      width: 56%;
+    }
   }
 
   & .features-bottom {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    @media only screen and (min-width: 35rem) and (max-width: 41em) {
+      flex-direction: row;
+      gap: 6rem;
+    }
+
+    @media only screen and (min-width: 41rem) and (max-width: 62.49em) {
+      flex-direction: row;
+      gap: 13rem;
+    }
 
     & .in-box {
       display: flex;

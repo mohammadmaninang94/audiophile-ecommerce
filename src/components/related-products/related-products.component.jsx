@@ -12,7 +12,9 @@ const RelatedProducts = (props) => {
                     return (
                         <div key={index} className='single-related-product'>
                             <picture>
-                                <source media="(max-width: 375px)" srcSet={item.image.mobile} />
+                                <source media="(max-width: 559px)" srcSet={item.image.mobile} />
+                                <source media="(max-width: 999px)" srcSet={item.image.tablet} />
+                                <source media="(min-width: 1000px)" srcSet={item.image.desktop} />
                                 <img src={item.image.mobile} alt={item.name} />
                             </picture>
                             <h3>{item.name}</h3>

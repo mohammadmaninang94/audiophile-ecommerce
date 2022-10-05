@@ -7,10 +7,23 @@
   align-items: center;
   margin-bottom: 7.5rem;
 
+  @media only screen and (min-width: 62.5em) {
+    gap: 4rem;
+  }
+
   & .related-products-group {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
+
+    @media only screen and (min-width: 35em) {
+      flex-direction: row;
+      gap: .6875rem;
+    }
+
+    @media only screen and (min-width: 62.5em) {
+      gap: 1.875rem;
+    }
   }
 
   & .single-related-product {
@@ -25,6 +38,11 @@
     @include fw-bold;
     @include uppercase;
     letter-spacing: 0.05375rem;
+
+    @media only screen and (min-width: 35em) {
+      @include fs-800;
+      letter-spacing: 0.07125rem;
+    }
   }
 
   & h3 {
@@ -32,6 +50,10 @@
     @include fw-bold;
     @include uppercase;
     letter-spacing: 0.106875rem;
+
+    @media only screen and (min-width: 35em) and (max-width: 40.5em) {
+      @include fs-500;
+    }
   }
 
   & picture {
