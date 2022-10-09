@@ -18,7 +18,7 @@ const RelatedProducts = (props) => {
                                 <img src={item.image.mobile} alt={item.name} />
                             </picture>
                             <h3>{item.name}</h3>
-                            <CustomBtn href={`/${product.category}/${item.slug}`} ctaType={ctaType.PRIMARY}>See Product</CustomBtn>
+                            <CustomBtn href={`/${product.category}/${item.slug}`} ctaType={ctaType.PRIMARY} handleClick={() => window.scrollTo(0, 0)}>See Product</CustomBtn>
                         </div>
                     )
                 })}

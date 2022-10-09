@@ -4,6 +4,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 import CustomBtn, { ctaTag, ctaType } from '../custom-cta/custom-cta.component';
 import QuantityBtn from '../quantity-btn/quantity-btn.component';
+import { newArr } from '../../helpers/helpers'
 
 import './main-product.styles.scss';
 
@@ -32,13 +33,11 @@ const MainProduct = (props) => {
                 <div className="another-div">
                     <div className="product-info">
                         { props.new ? <p><span>NEW PRODUCT</span></p> : '' }
-                        <h1>{props.name.toUpperCase()}</h1>
+                        <h1>{`${newArr(props.name.split(' '))}\u000A${props.category.toUpperCase()}`}</h1>
                         <p>{props.description}</p>
                         <h3>{`$ ${props.price.toLocaleString('en-US')}`}</h3>
                     </div>
                     <div className="cart-add">
-                        {/*<QuantityBtn item={1} />
-                        <CustomBtn href='/' ctaType={ctaType.PRIMARY}>add to cart</CustomBtn>*/}
                         <QuantityBtn quantity={itemQuantity} addHandler={addItemHandler} removeHandler={removeItemHandler} />
                         <CustomBtn type="button" tag={ctaTag.BUTTON} ctaType={ctaType.PRIMARY} handleClick={addItemToCart}>add to cart</CustomBtn>
                     </div>

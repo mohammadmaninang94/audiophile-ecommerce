@@ -119,6 +119,7 @@
     @include fw-bold;
     @include fs-700;
     letter-spacing: 1px;
+    white-space: pre-wrap;
 
     @media only screen and (min-width: 62.5rem) {
       @include fs-900;
