@@ -1,19 +1,130 @@
 @use "../../sass/abstracts" as *;
 
 .main-product {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  gap: 2rem;
   margin-bottom: 5.5rem;
 
-  & img {
-    border-radius: .5rem;
+  @media only screen and (min-width: 35em) {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1.5rem;
+  }
+
+  @media only screen and (min-width: 43.75em) {
+    grid-gap: 4.3125rem;
+  }
+
+  @media only screen and (min-width: 62.5em) {
+    gap: 5.5rem
+  }
+
+  @media only screen and (min-width: 65.625em) {
+    gap: 7.78125rem
+  }
+
+  & .product-left {
+
+    @media only screen and (min-width: 35em) {
+        min-width: 235px;
+    }
+
+    @media only screen and (min-width: 41.25em) {
+      min-width: 281px;
+    }
+
+    @media only screen and (min-width: 62.5em) {
+      min-width: 540px;
+    }
+
+    & img {
+      border-radius: .5rem;
+    }
+  }
+
+  & .product-right {
+    display: grid;
+    grid-gap: 2.5rem;
+    align-items: center;
+
+    @media only screen and (min-width: 35em) {
+      max-width: 339.5px;
+    }
+
+    & .another-div {
+      display: grid;
+      grid-gap: 2rem;
+
+      @media only screen and (min-width: 35em) and (max-width: 41.1875em) {
+        gap: 1rem;
+      }
+
+      & .product-info {
+        display: grid;
+        grid-gap: 2rem;
+
+        @media only screen and (max-width: 34.99em) {
+          & :nth-child(1) {
+            margin-bottom: -.5rem;
+          }
+        }
+
+        @media only screen and (min-width: 35em) {
+          & :nth-child(1) {
+            margin-bottom: -1rem;
+          }
+        }
+
+        @media only screen and (min-width: 35em) and (max-width: 41.1875em) {
+          gap: 1rem;
+
+          & :nth-child(1) {
+            margin-bottom: -.5rem;
+          }
+        }
+      }
+    }
+
+    & .cart-add {
+      display: grid;
+      grid-template-columns: 120px 160px;
+      column-gap: 16px;
+
+      @media only screen and (min-width: 35em) {
+        grid-template-columns: 100px 120px;
+      }
+
+      @media only screen and (min-width: 41.25em) {
+        grid-template-columns: 120px 160px;
+      }
+
+      & .quantity-btn {
+        max-width: 120px;
+        padding-top: 15px;
+        height: 48px;
+      }
+
+      & .btn--primary {
+        @media only screen and (min-width: 35em) {
+          width: 120px;
+        }
+
+        @media only screen and (min-width: 41.25em) {
+          width: auto;
+        }
+      }
+    }
   }
 
   & h1 {
     @include fw-bold;
     @include fs-700;
     letter-spacing: 1px;
+    white-space: pre-wrap;
+
+    @media only screen and (min-width: 62.5rem) {
+      @include fs-900;
+      letter-spacing: 1.43px;
+    }
   }
 
   & p {
@@ -27,26 +138,8 @@
     }
   }
 
-  & .product-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   & h3 {
     @include fw-bold;
     @include fs-500;
-  }
-    
-  & .cart-add {
-    display: grid;
-    grid-template-columns: 120px 160px;
-    column-gap: 16px;
-
-    & .quantity-btn{
-      height: 100%;
-      max-width: 9rem;
-      padding-top: 15px;
-    }
   }
 }

@@ -6,4 +6,13 @@
 	text-transform: none;
 	font-size: 15px;
 	@include fw-medium;
+
+	@media only screen and (min-width: 35em) {
+		margin-top: 2.0625rem;
+	}
+
+	@media only screen and (min-width: 62.5em) {
+		margin-top: 4.9375rem;
+		margin-bottom: 3.5rem;
+	}
 }

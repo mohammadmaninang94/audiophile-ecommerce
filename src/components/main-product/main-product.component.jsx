@@ -4,6 +4,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 import CustomBtn, { ctaTag, ctaType } from '../custom-cta/custom-cta.component';
 import QuantityBtn from '../quantity-btn/quantity-btn.component';
+import { newArr } from '../../helpers/helpers'
 
 import './main-product.styles.scss';
 
@@ -20,34 +21,30 @@ const MainProduct = (props) => {
     };
     return (
         <section className='main-product'>
-            <img
-                src={props.image.mobile}
-                srcSet={`${props.image.mobile} 654w,
-                    ${props.image.tablet} 562w,
-                    ${props.image.desktop} 1080w`}
-                sizes="(max-width: 375px) 327px,
-                    (max-width: 768px) 281px,
-                    (min-width: 769px) 540px"
-                alt={props.name} />
-            <div className="product-info">
-                {props.new ? <p><span>NEW PRODUCT</span></p> : ''}
-                <h1>{props.name.toUpperCase()}</h1>
-                <p>{props.description}</p>
-                <h3>{`$ ${props.price.toLocaleString('en-US')}`}</h3>
+            <div className="product-left">
+                <picture>
+                    <source media="(max-width: 559px)" srcSet={`${props.image.mobile}`} />
+                    <source media="(max-width: 999px)" srcSet={`${props.image.tablet}`} />
+                    <source media="(min-width: 1000px)" srcSet={`${props.image.desktop}`} />
+                    <img src={`${props.image.mobile}`} alt={`${props.name}`} />
+                </picture>
             </div>
-            <div className="cart-add">
-                <QuantityBtn quantity={itemQuantity} addHandler={addItemHandler} removeHandler={removeItemHandler} />
-                <CustomBtn type="button" tag={ctaTag.BUTTON} ctaType={ctaType.PRIMARY} handleClick={addItemToCart}>add to cart</CustomBtn>
+            <div className="product-right">
+                <div className="another-div">
+                    <div className="product-info">
+                        { props.new ? <p><span>NEW PRODUCT</span></p> : '' }
+                        <h1>{`${newArr(props.name.split(' '))}\u000A${props.category.toUpperCase()}`}</h1>
+                        <p>{props.description}</p>
+                        <h3>{`$ ${props.price.toLocaleString('en-US')}`}</h3>
+                    </div>
+                    <div className="cart-add">
+                        <QuantityBtn quantity={itemQuantity} addHandler={addItemHandler} removeHandler={removeItemHandler} />
+                        <CustomBtn type="button" tag={ctaTag.BUTTON} ctaType={ctaType.PRIMARY} handleClick={addItemToCart}>add to cart</CustomBtn>
+                    </div>
+                </div>
             </div>
         </section>
     );
 };
 
 export default MainProduct;
-
-
- // "
-                //     /images/product-xx99-mark-two-headphones/mobile/image-product.jpg 327w,
-                //     /images/product-xx99-mark-two-headphones/tablet/image-product.jpg 281w,
-                //     /images/product-xx99-mark-two-headphones/desktop/image-product.jpg 540w
-                // "

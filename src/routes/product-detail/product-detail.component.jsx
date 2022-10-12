@@ -23,6 +23,7 @@ const ProductDetail = () => {
             <MainProduct
                 image={product.image}
                 name={product.name}
+                category={product.category}
                 new={product.new}
                 description={product.description}
                 price={product.price}
@@ -38,6 +39,7 @@ const ProductDetail = () => {
                 first={product.gallery.first}
                 second={product.gallery.second}
                 third={product.gallery.third}
+                gallery={product.gallery}
                 alt={product.name}
             />
             <RelatedProducts

@@ -1,0 +1,106 @@
+@use "../../sass/abstracts" as *;
+
+.category-page {
+	margin-top: 4rem;
+
+	& .category-product {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 7.5rem;
+
+		& .category-product--left {
+			& img {
+		      border-radius: .5rem;
+		    }
+		}
+
+		& .category-product--right {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1.5rem;
+
+			& .category-product__new {
+				
+				& span {
+			        color: $clr-orange-dark;
+			        @include fw-regular;
+			        @include fs-300;
+			    }
+			}
+
+			& .category-product__name {
+				text-align: center;
+				@include fw-bold;
+			    @include fs-700;
+			    letter-spacing: 1px;
+			    white-space: pre-wrap;
+			    line-height: 2.25rem;
+			}
+
+			& .category-product__description {
+				text-align: center;
+    			color: $clr-black-50;
+			}
+		}
+	}
+
+	& .category-product--med {
+		@media only screen and (min-width: 35em) {
+			gap: 3.25rem;
+
+			& .category-product--right {
+				gap: 1rem;
+				width: 80%;
+
+				& .category-product__name {
+					margin-bottom: 1rem;
+					letter-spacing: 0.089375rem;
+					@include fs-900;
+				}
+
+				& .category-product__description {
+	    			margin-bottom: .5rem;
+				}
+			}
+		}
+	}
+
+	& .category-product--large {
+		@media only screen and (min-width: 62.5em) {
+			flex-direction: row;
+			gap: 7.8125rem;
+			margin-bottom: 10rem;
+
+			& .category-product--right {
+				align-items: flex-start;
+				width: 79%;
+
+				& .category-product__name {
+					text-align: left;
+				}
+
+				& .category-product__description {
+					text-align: left;
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
+
+	& .flip {
+		@media only screen and (min-width: 62.5rem) {
+			& .category-product--left {
+				order: 2;
+			}
+
+			& .category-product--right {
+				order: 1;
+			}
+		}
+	}
+}
+

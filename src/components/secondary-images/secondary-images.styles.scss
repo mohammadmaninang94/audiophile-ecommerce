@@ -4,9 +4,39 @@
   margin-bottom: 7.5rem;
 
   & .pics {
-  	display: flex;
-  	flex-direction: column;
-  	gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+
+    @media only screen and (min-width: 35em) {
+      flex-direction: row;
+      gap: 1.125rem;
+    }
+
+    @media only screen and (min-width: 62.5em) {
+      flex-direction: row;
+      gap: 1.1875rem;
+    }    
+  }
+
+  & .pics-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+
+    @media only screen and (min-width: 35em) {
+      
+    }
+    
+    @media only screen and (min-width: 62.5em) {
+      
+      gap: 1.1875rem;
+    }
+  }
+
+  & .pics-right {
+    
   }
 
   & img {

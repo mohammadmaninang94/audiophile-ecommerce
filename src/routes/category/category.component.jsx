@@ -1,17 +1,16 @@
-
-import { Fragment } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Fragment, useContext } from 'react';
+import { ProductsContext } from '../../contexts/products.context';
 
 import './category.styles.scss';
+import CategoryProduct from '../../components/category-product/category-product.component';
 
 const Category = ({ title }) => {
-    const location = useLocation();
+    const { products, categoryLookup } = useContext(ProductsContext);
+    const categoryArr = categoryLookup(products, title);
+
     return (
         <Fragment>
-            <h1>{title} Category</h1>
-            <Link to={`${location.pathname}/xx99-mark-two-headphones`}>item1</Link>
-            <Link to={`${location.pathname}/item2`}>item2</Link>
-            <Link to={`${location.pathname}/item3`}>item3</Link>
+            <CategoryProduct categoryArr={categoryArr}></CategoryProduct>
         </Fragment>
     )
 };
