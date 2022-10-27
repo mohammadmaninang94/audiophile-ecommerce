@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const findExistingItem = (items, itemToAdd) =>
     items.find(item => item.id === itemToAdd.id);
@@ -44,24 +45,25 @@ export const CartContext = createContext({
     removeAllItems: () => null
 });
 
-const initialItems = [
-    {
-        id: 4, name: "XX99 Mark II",
-        price: 2999, quantity: 1,
-        thumbnailImage: '/images/cart/image-xx99-mark-two-headphones.jpg'
-    },
-    {
-        id: 2, name: "XX59", price: 899, quantity: 2,
-        thumbnailImage: "/images/cart/image-xx59-headphones.jpg"
-    },
-    {
-        id: 1, name: "YX1 Wireless", price: 599, quantity: 1,
-        thumbnailImage: "/images/cart/image-yx1-earphones.jpg"
-    }
-];
+// const initialItems = [
+//     {
+//         id: 4, name: "XX99 Mark II",
+//         price: 2999, quantity: 1,
+//         thumbnailImage: '/images/cart/image-xx99-mark-two-headphones.jpg'
+//     },
+//     {
+//         id: 2, name: "XX59", price: 899, quantity: 2,
+//         thumbnailImage: "/images/cart/image-xx59-headphones.jpg"
+//     },
+//     {
+//         id: 1, name: "YX1 Wireless", price: 599, quantity: 1,
+//         thumbnailImage: "/images/cart/image-yx1-earphones.jpg"
+//     }
+// ];
 
 export const CartProvider = ({ children }) => {
-    const [items, setItems] = useState(initialItems);
+    const [localCartItems, setLocalCartItems] = useLocalStorage('cartItems', []);
+    const [items, setItems] = useState(localCartItems);
     const [itemsCount, setItemsCount] = useState(0);
     const [itemsTotal, setItemsTotal] = useState(0);
 
@@ -69,11 +71,14 @@ export const CartProvider = ({ children }) => {
         const newCount = items.reduce((total, item) => total + item.quantity, 0);
         const newTotal = items.reduce((total, item) => total + item.quantity * item.price, 0);
         setItemsCount(newCount);
-        setItemsTotal(newTotal)
+        setItemsTotal(newTotal);
+        setLocalCartItems(items);
     }, [items]);
 
     const addItem = (item, quantity) => setItems(addItemToCart(items, item, quantity));
+
     const removeItem = (item) => setItems(removeItemFromCart(items, item));
+
 
     const extractItem = ({ id, name, price, thumbnailImage }) => {
         return { id, name, price, thumbnailImage, quantity: 1 };
