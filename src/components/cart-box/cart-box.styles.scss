@@ -35,9 +35,8 @@
   }
 
   &.visible &-box {
-    transform: scale(1);
     opacity: 1;
-
+    // transform: scale(1);
     // transform: scale(1) skew(0deg);
   }
 
@@ -48,11 +47,10 @@
     border-radius: 8px;
     @include bg-white;
     padding: 2rem 1.75rem;
-    // margin-inline: 1.5rem;
     margin-top: 1.5rem;
     opacity: 0;
-    transform: scale(0.25);
-    transition: all 0.5s 0.2s;
+    // transform: scale(.25);
+    // transition: all 0.5s 0.2s;
     display: flex;
     flex-direction: column;
     gap: 2rem;

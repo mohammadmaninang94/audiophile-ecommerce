@@ -10,11 +10,16 @@ import './checkout-modal.styless.scss';
 
 const CheckoutModal = () => {
     const { toggleCheckoutModal } = useContext(AppContext);
-    const { items, itemsTotal } = useContext(CartContext);
-    const [viewLess, setViewLess] = useState(true);
+    const { items, itemsTotal, removeAllItems } = useContext(CartContext);
+    const [viewLess, setViewLess] = useState(items.length > 1);
 
     const viewitemsHandler = () => {
         setViewLess(!viewLess);
+    };
+
+    const handleClick = () => {
+        toggleCheckoutModal();
+        removeAllItems();
     };
 
     return (
@@ -32,24 +37,30 @@ const CheckoutModal = () => {
                                     <div key={id} className='checkout-modal__item'>
                                         <img src={thumbnailImage} alt={name} />
                                         <div>
-                                        <strong>{name}</strong>
-                                        <span>$ {price.toLocaleString('en-US')}</span>
+                                            <strong>{name}</strong>
+                                            <span>$ {price.toLocaleString('en-US')}</span>
                                         </div>
                                         <span className='checkout-modal__item-qty'>x{quantity}</span>
                                     </div>
                                 )
                             })}
                         </div>
-                        <CustomCta type="button" tag={ctaTag.BUTTON} ctaType={ctaType.LINK} handleClick={viewitemsHandler}>{viewLess ? 'and 2 other item(s)' : 'View less'}</CustomCta>
+                        {items.length > 1 ?
+                            <CustomCta type="button" tag={ctaTag.BUTTON} ctaType={ctaType.LINK}
+                                handleClick={viewitemsHandler}>
+                                {viewLess ? `and ${items.length - 1} other item(s)` : 'View less'}
+                            </CustomCta>
+                            : null
+                        }
                     </div>
                     <div className='checkout-modal__total-box'>
                         <h6>grand total</h6>
                         <h5>$ {itemsTotal.toLocaleString('en-US')}</h5>
                     </div>
                 </div>
-                <CustomCta href='/' tag={ctaTag.DEFAULT} ctaType={ctaType.PRIMARY} handleClick={toggleCheckoutModal}>back to home</CustomCta>
+                <CustomCta href='/' tag={ctaTag.DEFAULT} ctaType={ctaType.PRIMARY} handleClick={handleClick}>back to home</CustomCta>
             </div>
-        </div>
+        </div >
     );
 };
 

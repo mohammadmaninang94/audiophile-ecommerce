@@ -45,22 +45,6 @@ export const CartContext = createContext({
     removeAllItems: () => null
 });
 
-// const initialItems = [
-//     {
-//         id: 4, name: "XX99 Mark II",
-//         price: 2999, quantity: 1,
-//         thumbnailImage: '/images/cart/image-xx99-mark-two-headphones.jpg'
-//     },
-//     {
-//         id: 2, name: "XX59", price: 899, quantity: 2,
-//         thumbnailImage: "/images/cart/image-xx59-headphones.jpg"
-//     },
-//     {
-//         id: 1, name: "YX1 Wireless", price: 599, quantity: 1,
-//         thumbnailImage: "/images/cart/image-yx1-earphones.jpg"
-//     }
-// ];
-
 export const CartProvider = ({ children }) => {
     const [localCartItems, setLocalCartItems] = useLocalStorage('cartItems', []);
     const [items, setItems] = useState(localCartItems);
@@ -78,7 +62,6 @@ export const CartProvider = ({ children }) => {
     const addItem = (item, quantity) => setItems(addItemToCart(items, item, quantity));
 
     const removeItem = (item) => setItems(removeItemFromCart(items, item));
-
 
     const extractItem = ({ id, name, price, thumbnailImage }) => {
         return { id, name, price, thumbnailImage, quantity: 1 };

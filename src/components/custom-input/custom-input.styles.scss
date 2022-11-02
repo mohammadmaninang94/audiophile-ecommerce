@@ -31,6 +31,13 @@
 
   &__error {
     right: 0;
+
+    width: 20ch;
+    text-align: right;
+    text-overflow: ellipsis;
+    height: 19.5px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   & input:focus {

@@ -16,7 +16,7 @@ const LatestSection = () => {
                     <h1>zx9 speaker</h1>
                     <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                 </figcaption>
-                <CustomCta href='/' ctaType={ctaType.TERTIARY}>see product</CustomCta>
+                <CustomCta href='/speakers' ctaType={ctaType.TERTIARY}>see product</CustomCta>
             </figure>
             <figure className='zx7'>
                 <picture>
@@ -27,7 +27,7 @@ const LatestSection = () => {
                 </picture>
                 <div>
                     <figcaption><h4>zx7 speaker</h4></figcaption>
-                    <CustomCta href='/' ctaType={ctaType.SECONDARY}>see product</CustomCta>
+                    <CustomCta href='/speakers' ctaType={ctaType.SECONDARY}>see product</CustomCta>
                 </div>
             </figure>
             <figure className='yx1'>
@@ -39,7 +39,7 @@ const LatestSection = () => {
                 </picture>
                 <div>
                     <figcaption><h4>yx1 earphones</h4></figcaption>
-                    <CustomCta href='/' ctaType={ctaType.SECONDARY}>see product</CustomCta>
+                    <CustomCta href='/earphones' ctaType={ctaType.SECONDARY}>see product</CustomCta>
                 </div>
             </figure>
         </section>
